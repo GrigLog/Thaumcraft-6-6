@@ -1,3 +1,11 @@
+532f4b4146b781653dc5a53fa848e2e3eb977bb1 assets/thaumcraft/models/item/cluster_cinnabar.json
+fe90a5b395f09d4a9f4c294d4467f9b0546456fe assets/thaumcraft/models/item/cluster_copper.json
+909daeded52d1de0b8cdaf518817b3cb9e75e161 assets/thaumcraft/models/item/cluster_gold.json
+072f67847dbe8d9be533c195d5a7267d1cacd4cd assets/thaumcraft/models/item/cluster_iron.json
+08369a233f5418d7aa1207fa051003e383ed2f27 assets/thaumcraft/models/item/cluster_lead.json
+b18f5bc3280e17286986801f9d4b8b3b955bfc12 assets/thaumcraft/models/item/cluster_quartz.json
+8ba53812ce21b8ecb4e1433efa1c192412ce2318 assets/thaumcraft/models/item/cluster_silver.json
+3c9e5ca213f82b2f81bd7d2d1290319f40d38c28 assets/thaumcraft/models/item/cluster_tin.json
 3d4e3e2530e111f0598a86d59319e9277f415582 assets/thaumcraft/models/item/elemental_axe.json
 fdfac5f4044bd219fdec93d271f82e44c38f8bd1 assets/thaumcraft/models/item/elemental_hoe.json
 be41e11a25ab144eab5b7c78ff420e075f774ed4 assets/thaumcraft/models/item/elemental_pick.json
@@ -6,6 +14,7 @@ be41e11a25ab144eab5b7c78ff420e075f774ed4 assets/thaumcraft/models/item/elemental
 e6ca1b2ef4b3b3b2252f5c8b661b68eee9e1ee3b assets/thaumcraft/models/item/ingot_brass.json
 a21ac8370de3a1bd329b4e12076ffbd897d3e93a assets/thaumcraft/models/item/ingot_thaumium.json
 64bb83c1fc3b425813b33e9b752be4c44b6a00ec assets/thaumcraft/models/item/ingot_void.json
+722cb1335f834e442d980db36e89b67026cc2ba6 assets/thaumcraft/models/item/primal_crusher.json
 af4e17128482d12351fb713c2f3cd01123bba3af assets/thaumcraft/models/item/thaumium_axe.json
 77dd96c6040eeae72e040a0e53dfc837de58ec0b assets/thaumcraft/models/item/thaumium_hoe.json
 665725f8f6714918a293817cdaf9f9794c18a1c4 assets/thaumcraft/models/item/thaumium_pick.json
@@ -16,3 +25,9 @@ af4e17128482d12351fb713c2f3cd01123bba3af assets/thaumcraft/models/item/thaumium_
 70b2df39f7c720dcb7aba74cb3a7f1811ed27bd7 assets/thaumcraft/models/item/void_pick.json
 ae8af1a117664d7854bd0d1a54ebb42b67def165 assets/thaumcraft/models/item/void_shovel.json
 1d76209735eabb16a05b1043ff42fb1cb1c2266b assets/thaumcraft/models/item/void_sword.json
+b3b65341f4381fa51085b4b4e17bc2aeded8536a data/forge/loot_modifiers/global_loot_modifiers.json
+74700d556ca80c7a1db5fd4efb09c3ddb26cad66 data/forge/tags/items/ores/copper.json
+74700d556ca80c7a1db5fd4efb09c3ddb26cad66 data/forge/tags/items/ores/lead.json
+74700d556ca80c7a1db5fd4efb09c3ddb26cad66 data/forge/tags/items/ores/silver.json
+74700d556ca80c7a1db5fd4efb09c3ddb26cad66 data/forge/tags/items/ores/tin.json
+40a0be6ad4f8e7aa102a8f73f142de6eed3b9f32 data/thaumcraft/loot_modifiers/refining.json

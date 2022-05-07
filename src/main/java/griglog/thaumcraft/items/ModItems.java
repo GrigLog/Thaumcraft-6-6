@@ -5,12 +5,11 @@ import griglog.thaumcraft.items.tools.thaumium.*;
 import griglog.thaumcraft.items.tools.void_.*;
 import net.minecraft.item.Item;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModItems {
-    public static final Item voidSword = new VoidSword();
-    public static final Item voidShovel = new VoidShovel();
-    public static final Item voidPickaxe = new VoidPickaxe();
-    public static final Item voidHoe = new VoidHoe();
-    public static final Item voidAxe = new VoidAxe();
+    public static List<Item> defaultModel = new ArrayList<>();
 
     public static final Item thaumiumSword = new ThaumiumSword();
     public static final Item thaumiumShovel = new ThaumiumShovel();
@@ -24,12 +23,30 @@ public class ModItems {
     public static final Item elementalHoe = new ElementalHoe();
     public static final Item elementalAxe = new ElementalAxe();
 
+    public static final Item voidSword = new VoidSword();
+    public static final Item voidShovel = new VoidShovel();
+    public static final Item voidPickaxe = new VoidPickaxe();
+    public static final Item voidHoe = new VoidHoe();
+    public static final Item voidAxe = new VoidAxe();
+
+    public static final Item primalCrusher = new PrimalCrusher();
+
     public static final Item thaumiumIngot = ModTab.defaultItem("ingot_thaumium");
     public static final Item brassIngot = ModTab.defaultItem("ingot_brass");
     public static final Item voidIngot = ModTab.defaultItem("ingot_void");
 
-    public static Item[] defaultModel = new Item[]{thaumiumIngot, brassIngot, voidIngot};
-    public static Item[] toolModel = new Item[]{voidSword, voidShovel, voidPickaxe, voidHoe, voidAxe,
+    public static final Item ironCluster = ModTab.defaultItem("cluster_iron");
+    public static final Item goldCluster = ModTab.defaultItem("cluster_gold");
+    public static final Item copperCluster = ModTab.defaultItem("cluster_copper");
+    public static final Item tinCluster = ModTab.defaultItem("cluster_tin");
+    public static final Item silverCluster = ModTab.defaultItem("cluster_silver");
+    public static final Item leadCluster = ModTab.defaultItem("cluster_lead");
+    public static final Item cinnabarCluster = ModTab.defaultItem("cluster_cinnabar");
+    public static final Item quartzCluster = ModTab.defaultItem("cluster_quartz");
+
+
+    public static Item[] toolModel = new Item[]{
         thaumiumSword, thaumiumShovel, thaumiumPickaxe, thaumiumHoe, thaumiumAxe,
-        elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe};
+        elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,
+        voidSword, voidShovel, voidPickaxe, voidHoe, voidAxe, primalCrusher};
 }

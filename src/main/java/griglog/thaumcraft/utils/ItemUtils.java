@@ -4,7 +4,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class InventoryUtils {
+import java.util.List;
+
+public class ItemUtils {
     public static boolean consumePlayerItem(PlayerEntity player, Item item){
         for (int i = 0; i < player.inventory.getSizeInventory(); i++){
             ItemStack is = player.inventory.getStackInSlot(i);

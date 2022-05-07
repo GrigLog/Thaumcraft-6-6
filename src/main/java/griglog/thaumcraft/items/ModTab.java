@@ -21,6 +21,8 @@ public class ModTab extends ItemGroup {
     }
 
     public static Item defaultItem(String id){
-        return new Item(props()).setRegistryName(id);
+        Item item = new Item(props()).setRegistryName(id);
+        ModItems.defaultModel.add(item);
+        return item;
     }
 }

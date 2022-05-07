@@ -1,6 +1,0 @@
-{
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "thaumcraft:items/primal_crusher"
-    }
-}

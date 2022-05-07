@@ -14,6 +14,7 @@ public class WorldUtils {
         if (!world.isRemote && !bs.isAir() && !unminable && (!bs.getRequiresTool() || is.canHarvestBlock(bs)) && is.getDestroySpeed(bs) >= 1
             /*&& ForgeHooks.onBlockBreakEvent(world, player.interactionManager.getGameType(), player, pos) != -1*/) { //TODO: test on servers with regions
             world.destroyBlock(pos, !player.isCreative(), player);
+            is.attemptDamageItem(1, world.rand, player);
             return true;
             //player.interactionManager.tryHarvestBlock(pos);
         }

@@ -1,6 +1,10 @@
 package griglog.thaumcraft.data;
 
+import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.common.data.ForgeBlockTagsProvider;
+import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
@@ -11,5 +15,11 @@ public class Data {
     static void data(GatherDataEvent event){
         DataGenerator gen = event.getGenerator();
         gen.addProvider(new ItemModelsProvider(gen, event.getExistingFileHelper()));
+        gen.addProvider(new LootModifiersProvider(gen));
+        gen.addProvider(new ModTagsProvider(gen, new ForgeBlockTagsProvider(gen, event.getExistingFileHelper()), event.getExistingFileHelper()));
+    }
+    @SubscribeEvent
+    static void regSerializers(RegistryEvent.Register<GlobalLootModifierSerializer<?>> event){
+        event.getRegistry().register(new RefiningModifier.Serializer());
     }
 }

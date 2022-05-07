@@ -52,7 +52,8 @@ public class BurrowingInfusion {
         int reach = isLog(bs) ? 2 : 1;
         findBlocks(world, pos, bs, reach);
         boolean worked = WorldUtils.tryBreakBlock(world, lastPos, player, is);
-        world.markAndNotifyBlock(pos, world.getChunkAt(pos), bs, bs, 3, 512);
+        //TODO: destroy leaves
+        /*world.markAndNotifyBlock(pos, world.getChunkAt(pos), bs, bs, 3, 512);
         if (worked && isLog(bs)) {
             world.markAndNotifyBlock(pos, world.getChunkAt(pos), bs, bs, 3, 512);
             for (int xx = -3; xx <= 3; ++xx) {
@@ -62,7 +63,7 @@ public class BurrowingInfusion {
                     }
                 }
             }
-        }
+        }*/
         return worked;
     }
 

@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumTier;
-import griglog.thaumcraft.utils.InventoryUtils;
+import griglog.thaumcraft.utils.ItemUtils;
 import griglog.thaumcraft.utils.MathUtils;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.block.BlockState;
@@ -106,7 +106,7 @@ public class ElementalShovel extends ShovelItem /*implements IArchitect */{
                 BlockPos pos = center.add(MathUtils.direction(v1, i)).add(MathUtils.direction(v2, j));
                 BlockState bs = world.getBlockState(pos);
                 if (bs.isReplaceable(new BlockItemUseContext(context))) {
-                    if (player.isCreative() || InventoryUtils.consumePlayerItem(player, baseBs.getBlock().asItem())) {
+                    if (player.isCreative() || ItemUtils.consumePlayerItem(player, baseBs.getBlock().asItem())) {
                         world.playSound(pos.getX(), pos.getY(), pos.getZ(), baseBs.getSoundType().getBreakSound(), SoundCategory.BLOCKS, 0.6f, 0.9f + world.rand.nextFloat() * 0.2f, false);
                         world.setBlockState(pos, baseBs.getBlock().getDefaultState());
                         stack.damageItem(1, player, (e) -> {});
@@ -114,7 +114,7 @@ public class ElementalShovel extends ShovelItem /*implements IArchitect */{
                             //FXDispatcher.INSTANCE.drawBamf(pos, 8401408, false, false, side);
                         }
                         player.swingArm(hand);
-                    } else if (baseBs.getBlock() == Blocks.GRASS_BLOCK && (player.isCreative() || InventoryUtils.consumePlayerItem(player, Items.DIRT))) {
+                    } else if (baseBs.getBlock() == Blocks.GRASS_BLOCK && (player.isCreative() || ItemUtils.consumePlayerItem(player, Items.DIRT))) {
                         world.playSound(pos.getX(), pos.getY(), pos.getZ(), baseBs.getSoundType().getBreakSound(), SoundCategory.BLOCKS, 0.6f, 0.9f + world.rand.nextFloat() * 0.2f, false);
                         world.setBlockState(pos, Blocks.DIRT.getDefaultState());
                         stack.damageItem(1, player, (e) -> {});

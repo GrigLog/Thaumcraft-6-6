@@ -1,0 +1,77 @@
+{
+  "baseChance": 0.125,
+  "chancePerLevel": 0.125,
+  "drops": [
+    {
+      "ingredient": {
+        "tag": "forge:ores/iron"
+      },
+      "result": {
+        "id": "thaumcraft:cluster_iron",
+        "Count": 1
+      },
+      "chance": 1.0
+    },
+    {
+      "ingredient": {
+        "tag": "forge:ores/gold"
+      },
+      "result": {
+        "id": "thaumcraft:cluster_gold",
+        "Count": 1
+      },
+      "chance": 1.0
+    },
+    {
+      "ingredient": {
+        "tag": "forge:ores/quartz"
+      },
+      "result": {
+        "id": "thaumcraft:cluster_quartz",
+        "Count": 1
+      },
+      "chance": 1.0
+    },
+    {
+      "ingredient": {
+        "tag": "forge:ores/copper"
+      },
+      "result": {
+        "id": "thaumcraft:cluster_copper",
+        "Count": 1
+      },
+      "chance": 1.0
+    },
+    {
+      "ingredient": {
+        "tag": "forge:ores/tin"
+      },
+      "result": {
+        "id": "thaumcraft:cluster_tin",
+        "Count": 1
+      },
+      "chance": 1.0
+    },
+    {
+      "ingredient": {
+        "tag": "forge:ores/silver"
+      },
+      "result": {
+        "id": "thaumcraft:cluster_silver",
+        "Count": 1
+      },
+      "chance": 1.0
+    },
+    {
+      "ingredient": {
+        "tag": "forge:ores/lead"
+      },
+      "result": {
+        "id": "thaumcraft:cluster_lead",
+        "Count": 1
+      },
+      "chance": 1.0
+    }
+  ],
+  "type": "thaumcraft:refining_serializer"
+}
