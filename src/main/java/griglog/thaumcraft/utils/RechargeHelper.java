@@ -79,7 +79,8 @@ public class RechargeHelper {
     public static int getCharge(ItemStack is) {
         if (is == null || is.isEmpty() || !(is.getItem() instanceof IRechargable))
             return -1;
-        return Utils.safeTag(is).getInt(NBT_TAG);
+        return ((IRechargable)is.getItem()).getMaxCharge(is, null);
+        //return Utils.safeTag(is).getInt(NBT_TAG);
     }
 
     /**

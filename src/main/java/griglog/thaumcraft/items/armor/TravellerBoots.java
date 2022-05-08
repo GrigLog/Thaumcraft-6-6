@@ -1,5 +1,6 @@
 package griglog.thaumcraft.items.armor;
 
+import griglog.thaumcraft.events.PlayerEvents;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumMaterial;
@@ -30,12 +31,6 @@ public class TravellerBoots extends ArmorItem implements IRechargable {
         setRegistryName("traveller_boots");
     }
 
-    /*
-    @OnlyIn(Dist.CLIENT)
-    public ItemMeshDefinition getCustomMesh() {
-        return null;
-    }*/
-
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
         return "thaumcraft:textures/entity/armor/bootstraveler.png";
     }
@@ -55,7 +50,7 @@ public class TravellerBoots extends ArmorItem implements IRechargable {
         if (!world.isRemote && player.ticksExisted % 20 == 0) {
             CompoundNBT tag = Utils.safeTag(stack);
             int e = tag.getInt("energy");
-            if (e-- == 0 && RechargeHelper.consumeCharge(stack, player, 1)) {
+            if (e-- <= 0 && RechargeHelper.consumeCharge(stack, player, 1)) {
                 e = 60;
             }
             tag.putInt("energy", e);
@@ -72,18 +67,17 @@ public class TravellerBoots extends ArmorItem implements IRechargable {
                 if (player.isInWater()) {
                     bonus /= 4.0f;
                 }
-                player.moveRelative(1, new Vector3d(bonus, 0, 0));
-                //player.moveRelative(0.0f, 0.0f, bonus, 1.0f);
+                player.moveRelative(1, new Vector3d(0, 0, bonus));
             } else {
                 if (player.isInWater()) {
-                    player.moveRelative(1, new Vector3d(0.025, 0, 0));
-                    //player.moveRelative(0.0f, 0.0f, 0.025f, 1.0f);
+                    player.moveRelative(1, new Vector3d(0, 0, 0.025));
                 }
                 player.jumpMovementFactor = 0.05f;
             }
         }
     }
-    static Map<Integer, Float> prevStep = new HashMap<>();
+
+    public static Map<Integer, Float> prevStep = new HashMap<>();
     @SubscribeEvent
     static void playerTick(TickEvent.PlayerTickEvent event){
         PlayerEntity player = event.player;

@@ -1,9 +1,10 @@
 package griglog.thaumcraft.items;
 
-import griglog.thaumcraft.items.armor.TravellerBoots;
+import griglog.thaumcraft.items.armor.*;
 import griglog.thaumcraft.items.tools.elemental.*;
 import griglog.thaumcraft.items.tools.thaumium.*;
 import griglog.thaumcraft.items.tools.void_.*;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 
 import java.util.ArrayList;
@@ -47,7 +48,29 @@ public class ModItems {
 
     public static final Item travellerBoots = new TravellerBoots();
 
-    public static Item[] defaultModel2 = new Item[]{travellerBoots};
+    public static final Item thaumiumHelmet = new ThaumiumArmor(EquipmentSlotType.HEAD);
+    public static final Item thaumiumChestplate = new ThaumiumArmor(EquipmentSlotType.CHEST);
+    public static final Item thaumiumLeggings = new ThaumiumArmor(EquipmentSlotType.LEGS);
+    public static final Item thaumiumBoots = new ThaumiumArmor(EquipmentSlotType.FEET);
+
+    public static final Item voidHelmet = new VoidArmor(EquipmentSlotType.HEAD);
+    public static final Item voidChestplate = new VoidArmor(EquipmentSlotType.CHEST);
+    public static final Item voidLeggings = new VoidArmor(EquipmentSlotType.LEGS);
+    public static final Item voidBoots = new VoidArmor(EquipmentSlotType.FEET);
+
+    public static final Item cultBoots = new CultistBoots();
+    public static final Item cultHelm = new CultistPlateArmor(EquipmentSlotType.HEAD);
+    public static final Item cultChest = new CultistPlateArmor(EquipmentSlotType.CHEST);
+    public static final Item cultLegs = new CultistPlateArmor(EquipmentSlotType.LEGS);
+    public static final Item cultRobeHelm = new CultistRobeArmor(EquipmentSlotType.HEAD);
+    public static final Item cultRobeChest = new CultistRobeArmor(EquipmentSlotType.CHEST);
+    public static final Item cultRobeLegs = new CultistRobeArmor(EquipmentSlotType.LEGS);
+
+
+    public static Item[] defaultModel2 = new Item[]{travellerBoots, 
+        thaumiumHelmet, thaumiumChestplate, thaumiumLeggings, thaumiumBoots,
+        voidHelmet, voidChestplate, voidLeggings, voidBoots,
+        cultBoots, cultHelm, cultChest, cultLegs, cultRobeHelm, cultRobeChest, cultRobeLegs};
     public static Item[] toolModel = new Item[]{
         thaumiumSword, thaumiumShovel, thaumiumPickaxe, thaumiumHoe, thaumiumAxe,
         elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,

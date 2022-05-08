@@ -65,7 +65,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories{
     mavenCentral()
-    //maven { url "https://www.cursemaven.com" }
+    maven { url "https://www.cursemaven.com" }
     maven { url = "https://maven.theillusivec4.top/" } //Curios API
 }
 dependencies {
@@ -73,6 +73,7 @@ dependencies {
     //implementation fg.deobf("curse.maven:-:-")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.5-4.0.8.2")
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.5-4.0.8.2:api")
+    runtimeOnly fg.deobf('curse.maven:crafttweaker-239197:3773919')
 }
 
 jar {
