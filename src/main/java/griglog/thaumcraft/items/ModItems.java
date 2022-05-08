@@ -1,5 +1,6 @@
 package griglog.thaumcraft.items;
 
+import griglog.thaumcraft.items.armor.TravellerBoots;
 import griglog.thaumcraft.items.tools.elemental.*;
 import griglog.thaumcraft.items.tools.thaumium.*;
 import griglog.thaumcraft.items.tools.void_.*;
@@ -44,7 +45,9 @@ public class ModItems {
     public static final Item cinnabarCluster = ModTab.defaultItem("cluster_cinnabar");
     public static final Item quartzCluster = ModTab.defaultItem("cluster_quartz");
 
+    public static final Item travellerBoots = new TravellerBoots();
 
+    public static Item[] defaultModel2 = new Item[]{travellerBoots};
     public static Item[] toolModel = new Item[]{
         thaumiumSword, thaumiumShovel, thaumiumPickaxe, thaumiumHoe, thaumiumAxe,
         elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,

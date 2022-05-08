@@ -1,8 +1,10 @@
 package griglog.thaumcraft.utils;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,6 +21,10 @@ public class WorldUtils {
             //player.interactionManager.tryHarvestBlock(pos);
         }
         return false;
+    }
+
+    public static boolean isLog(BlockState bs){
+        return bs.getMaterial() == Material.WOOD || bs.getMaterial() == Material.NETHER_WOOD || bs.isIn(BlockTags.LOGS);
     }
 
     public static void mine5x5(World world, BlockPos pos, Direction side, ServerPlayerEntity player, ItemStack is) {

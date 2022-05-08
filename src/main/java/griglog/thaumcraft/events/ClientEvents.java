@@ -1,6 +1,9 @@
 package griglog.thaumcraft.events;
 
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
+import griglog.thaumcraft.items.interfaces.IEssentiaContainerItem;
+import griglog.thaumcraft.items.interfaces.IRechargable;
+import griglog.thaumcraft.utils.RechargeHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.ListNBT;
@@ -32,12 +35,13 @@ public class ClientEvents {
             if (al > 0) {
                 event.getToolTip().add(new TranslationTextComponent("tc.visdiscount").appendString(": " + al + "%").mergeStyle(TextFormatting.DARK_PURPLE));
             }
-            /*if (event.getItemStack().getItem() instanceof IRechargable) {
+            if (event.getItemStack().getItem() instanceof IRechargable) {
                 int c = Math.round((float) RechargeHelper.getCharge(event.getItemStack()));
                 if (c >= 0) {
                     event.getToolTip().add(new TranslationTextComponent("tc.charge").appendString( " " + c).mergeStyle(TextFormatting.YELLOW));
                 }
             }
+            /*
             if (event.getItemStack().getItem() instanceof IEssentiaContainerItem) {
                 AspectList aspects = ((IEssentiaContainerItem) event.getItemStack().getItem()).getAspects(event.getItemStack());
                 if (aspects != null && aspects.size() > 0) {

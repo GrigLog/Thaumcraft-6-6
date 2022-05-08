@@ -27,16 +27,12 @@ import java.util.Map;
 public class BurrowingInfusion {
     public static boolean handle(ServerPlayerEntity player, BlockPos pos, ItemStack is){
         BlockState bs = player.world.getBlockState(pos);
-        if (!player.isSneaking() && ForgeHooks.isToolEffective(player.world, pos, is) && (isLog(bs) || isOre(bs))){
+        if (!player.isSneaking() && ForgeHooks.isToolEffective(player.world, pos, is) && (WorldUtils.isLog(bs) || isOre(bs))){
             is.attemptDamageItem(1, player.world.rand, player);
             breakFurthestBlock(player.world, pos, bs, player, is);
             return true;
         }
         return false;
-    }
-
-    public static boolean isLog(BlockState bs){
-        return bs.getMaterial() == Material.WOOD || bs.getMaterial() == Material.NETHER_WOOD || bs.isIn(BlockTags.LOGS);
     }
 
     public static boolean isOre(BlockState bs){
@@ -49,7 +45,7 @@ public class BurrowingInfusion {
     public static boolean breakFurthestBlock(World world, BlockPos pos, BlockState bs, ServerPlayerEntity player, ItemStack is) {
         lastPos = new BlockPos(pos);
         lastdistance = 0.0;
-        int reach = isLog(bs) ? 2 : 1;
+        int reach = WorldUtils.isLog(bs) ? 2 : 1;
         findBlocks(world, pos, bs, reach);
         boolean worked = WorldUtils.tryBreakBlock(world, lastPos, player, is);
         //TODO: destroy leaves

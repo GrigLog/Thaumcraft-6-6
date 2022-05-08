@@ -17,6 +17,8 @@ public class ItemModelsProvider extends ItemModelProvider {
     protected void registerModels() {
         for (Item item : ModItems.defaultModel)
             makeItemModel(item, "item/generated");
+        for (Item item : ModItems.defaultModel2)
+            makeItemModel(item, "item/generated");
         for (Item item: ModItems.toolModel)
             makeItemModel(item, "item/handheld");
     }
