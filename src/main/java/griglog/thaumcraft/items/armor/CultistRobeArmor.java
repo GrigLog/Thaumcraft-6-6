@@ -18,7 +18,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 
 public class CultistRobeArmor extends ArmorItem implements IVisDiscountGear, IWarpingGear {
-    BipedModel<LivingEntity> model1 = new ModelRobeArmor(1f);
+    BipedModel<LivingEntity> model1 = new ModelRobeArmor();
 
     public CultistRobeArmor(EquipmentSlotType slot) {
         super(ThaumMaterial.CULTIST_ROBE, slot, ModTab.props());

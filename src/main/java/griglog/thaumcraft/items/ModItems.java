@@ -1,5 +1,6 @@
 package griglog.thaumcraft.items;
 
+import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.items.armor.*;
 import griglog.thaumcraft.items.tools.elemental.*;
 import griglog.thaumcraft.items.tools.thaumium.*;
@@ -7,12 +8,9 @@ import griglog.thaumcraft.items.tools.void_.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class ModItems {
-    public static List<Item> defaultModel = new ArrayList<>();
-
     public static final Item thaumiumSword = new ThaumiumSword();
     public static final Item thaumiumShovel = new ThaumiumShovel();
     public static final Item thaumiumPickaxe = new ThaumiumPickaxe();
@@ -46,18 +44,18 @@ public class ModItems {
     public static final Item cinnabarCluster = ModTab.defaultItem("cluster_cinnabar");
     public static final Item quartzCluster = ModTab.defaultItem("cluster_quartz");
 
+    public static final Item fabric = ModTab.defaultItem("fabric");
+
     public static final Item travellerBoots = new TravellerBoots();
 
     public static final Item thaumiumHelmet = new ThaumiumArmor(EquipmentSlotType.HEAD);
     public static final Item thaumiumChestplate = new ThaumiumArmor(EquipmentSlotType.CHEST);
     public static final Item thaumiumLeggings = new ThaumiumArmor(EquipmentSlotType.LEGS);
     public static final Item thaumiumBoots = new ThaumiumArmor(EquipmentSlotType.FEET);
-
     public static final Item voidHelmet = new VoidArmor(EquipmentSlotType.HEAD);
     public static final Item voidChestplate = new VoidArmor(EquipmentSlotType.CHEST);
     public static final Item voidLeggings = new VoidArmor(EquipmentSlotType.LEGS);
     public static final Item voidBoots = new VoidArmor(EquipmentSlotType.FEET);
-
     public static final Item cultBoots = new CultistBoots();
     public static final Item cultHelm = new CultistPlateArmor(EquipmentSlotType.HEAD);
     public static final Item cultChest = new CultistPlateArmor(EquipmentSlotType.CHEST);
@@ -65,14 +63,20 @@ public class ModItems {
     public static final Item cultRobeHelm = new CultistRobeArmor(EquipmentSlotType.HEAD);
     public static final Item cultRobeChest = new CultistRobeArmor(EquipmentSlotType.CHEST);
     public static final Item cultRobeLegs = new CultistRobeArmor(EquipmentSlotType.LEGS);
+    public static final Item clothChest = new ClothArmor(EquipmentSlotType.CHEST);
+    public static final Item clothLegs = new ClothArmor(EquipmentSlotType.LEGS);
+    public static final Item clothBoots = new ClothArmor(EquipmentSlotType.FEET);
+    public static final Item fortressHelm = new FortressArmor(EquipmentSlotType.HEAD);
+    public static final Item fortressChest = new FortressArmor(EquipmentSlotType.CHEST);
+    public static final Item fortressLegs = new FortressArmor(EquipmentSlotType.LEGS);
+    public static final Item voidRobeHelm = new VoidRobeArmor(EquipmentSlotType.HEAD);
+    public static final Item voidRobeChest = new VoidRobeArmor(EquipmentSlotType.CHEST);
+    public static final Item voidRobeLegs = new VoidRobeArmor(EquipmentSlotType.LEGS);
 
 
-    public static Item[] defaultModel2 = new Item[]{travellerBoots, 
-        thaumiumHelmet, thaumiumChestplate, thaumiumLeggings, thaumiumBoots,
-        voidHelmet, voidChestplate, voidLeggings, voidBoots,
-        cultBoots, cultHelm, cultChest, cultLegs, cultRobeHelm, cultRobeChest, cultRobeLegs};
-    public static Item[] toolModel = new Item[]{
+    public static Set<Item> specialModel = ImmutableSet.of(clothChest, clothLegs, clothBoots, voidRobeHelm, voidRobeChest, voidRobeLegs);
+    public static Set<Item> toolModel = ImmutableSet.of(
         thaumiumSword, thaumiumShovel, thaumiumPickaxe, thaumiumHoe, thaumiumAxe,
         elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,
-        voidSword, voidShovel, voidPickaxe, voidHoe, voidAxe, primalCrusher};
+        voidSword, voidShovel, voidPickaxe, voidHoe, voidAxe, primalCrusher);
 }

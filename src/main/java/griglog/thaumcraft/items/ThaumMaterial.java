@@ -1,9 +1,7 @@
 package griglog.thaumcraft.items;
 
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
@@ -18,7 +16,7 @@ public class ThaumMaterial implements IArmorMaterial {
     public static ThaumMaterial THAUMIUM = new ThaumMaterial("THAUMIUM", 25, new int[] { 2, 5, 6, 2 }, 25, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F, 0, () -> Ingredient.fromItems(ModItems.thaumiumIngot));
     public static ThaumMaterial SPECIAL = new ThaumMaterial("SPECIAL", 25, new int[] { 1, 2, 3, 1 }, 25, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 1.0F, 0, () -> null);
     public static ThaumMaterial VOID = new ThaumMaterial("VOID", 10, new int[] { 3, 6, 8, 3 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 1F, 0, () -> Ingredient.fromItems(ModItems.voidIngot));
-    public static ThaumMaterial VOIDROBE = new ThaumMaterial("VOIDROBE", 18, new int[] { 4, 7, 9, 4 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2f, 0, () -> Ingredient.fromItems(ModItems.voidIngot));
+    public static ThaumMaterial VOID_ROBE = new ThaumMaterial("VOIDROBE", 18, new int[] { 4, 7, 9, 4 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2f, 0, () -> Ingredient.fromItems(ModItems.voidIngot));
     public static ThaumMaterial FORTRESS = new ThaumMaterial("FORTRESS", 40, new int[] { 3, 6, 7, 3 }, 25, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 3f, 0, () -> Ingredient.fromItems(ModItems.thaumiumIngot));
     public static ThaumMaterial CULTIST_PLATE = new ThaumMaterial("CULTIST_PLATE", 18, new int[]{2, 5, 6, 2}, 13, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F, 0, () -> Ingredient.fromItems(Items.IRON_INGOT));
     public static ThaumMaterial CULTIST_ROBE = new ThaumMaterial("CULTIST_ROBE", 17, new int[]{2, 4, 5, 2}, 13, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F, 0, () -> Ingredient.fromItems(Items.IRON_INGOT));

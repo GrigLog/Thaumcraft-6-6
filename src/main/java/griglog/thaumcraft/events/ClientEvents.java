@@ -3,6 +3,8 @@ package griglog.thaumcraft.events;
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
 import griglog.thaumcraft.items.interfaces.IEssentiaContainerItem;
 import griglog.thaumcraft.items.interfaces.IRechargable;
+import griglog.thaumcraft.items.interfaces.IVisDiscountGear;
+import griglog.thaumcraft.items.interfaces.IWarpingGear;
 import griglog.thaumcraft.utils.RechargeHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -62,15 +64,30 @@ public class ClientEvents {
         }
     }
 
-    private static int getFinalDiscount(ItemStack itemStack, PlayerEntity player) {
-        return 0;
+    public static int getRunicCharge(ItemStack stack) {
+        return stack.hasTag() ? stack.getTag().getByte("TC.RUNIC") : 0;
     }
 
-    private static int getFinalWarp(ItemStack itemStack, PlayerEntity player) {
-        return 0;
+    public static int getFinalWarp(ItemStack stack, PlayerEntity player) {
+        if (stack == null || stack.isEmpty()) {
+            return 0;
+        }
+        int warp = 0;
+        if (stack.getItem() instanceof IWarpingGear) {
+            IWarpingGear armor = (IWarpingGear) stack.getItem();
+            warp += armor.getWarp(stack, player);
+        }
+        if (stack.hasTag() && stack.getTag().contains("TC.WARP")) {
+            warp += stack.getTag().getByte("TC.WARP");
+        }
+        return warp;
     }
 
-    private static int getRunicCharge(ItemStack itemStack) {
-        return 0;
+    public static int getFinalDiscount(ItemStack stack, PlayerEntity player) {
+        if (stack == null || stack.isEmpty() || !(stack.getItem() instanceof IVisDiscountGear)) {
+            return 0;
+        }
+        IVisDiscountGear gear = (IVisDiscountGear) stack.getItem();
+        return gear.getVisDiscount(stack, player);
     }
 }

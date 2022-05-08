@@ -14,8 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class CultistPlateArmor extends ArmorItem {
-    BipedModel<LivingEntity> model1 = new ModelKnightArmor(1f);
-    BipedModel<LivingEntity> model2 = new ModelKnightArmor(0.5f);
+    BipedModel<LivingEntity> model = new ModelKnightArmor();
 
     public CultistPlateArmor(EquipmentSlotType slot) {
         super(ThaumMaterial.CULTIST_PLATE, slot, ModTab.props());
@@ -34,28 +33,8 @@ public class CultistPlateArmor extends ArmorItem {
         return stack2.isItemEqual(new ItemStack(Items.IRON_INGOT)) || super.getIsRepairable(stack1, stack2);
     }
 
-
-
     @OnlyIn(Dist.CLIENT)
     public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-        return (A) model1;
-        /*switch (armorSlot){
-            default:
-            case HEAD:
-            case CHEST:
-                return (A) model1;
-            case LEGS:
-            case FEET:
-                return (A) model2;
-        }*/
+        return (A) model;
     }
-    /*public BipedModel getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, BipedModel _default) {
-        if (model1 == null) {
-            model1 = new ModelKnightArmor(1.0f);
-        }
-        if (model2 == null) {
-            model2 = new ModelKnightArmor(0.5f);
-        }
-        return model = CustomArmorHelper.getCustomArmorModel(entityLiving, itemStack, armorSlot, model, model1, model2);
-    }*/
 }

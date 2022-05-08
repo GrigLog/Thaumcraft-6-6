@@ -1,5 +1,7 @@
 package griglog.thaumcraft.client.models;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -67,10 +69,10 @@ public class ModelRobeArmor extends BipedModel<LivingEntity> {
     ModelRenderer LegpanelL6;
     ModelRenderer SidepanelL1;
 
-    public ModelRobeArmor(float f) {
-        super(f, 0, 128, 64);
-        textureWidth = 128;
-        textureHeight = 64;
+    public ModelRobeArmor() {
+        super(0.49f, 0, 128, 64);
+        bipedHeadwear.showModel = false;
+
         (Hood1 = new ModelRenderer(this, 16, 7)).addBox(-4.5f, -9.0f, -4.6f, 9, 9, 9);
         Hood1.setTextureSize(128, 64);
         setRotation(Hood1, 0.0f, 0.0f, 0.0f);
@@ -292,7 +294,7 @@ public class ModelRobeArmor extends BipedModel<LivingEntity> {
         bipedBody.addChild(MbeltB);
         bipedBody.addChild(MbeltL);
         bipedBody.addChild(MbeltR);
-        if (f < 1.0f) {
+        //if (f < 1.0f) {
             bipedLeftLeg.addChild(Focipouch);
             bipedBody.addChild(FrontclothR1);
             bipedBody.addChild(FrontclothR2);
@@ -304,7 +306,7 @@ public class ModelRobeArmor extends BipedModel<LivingEntity> {
             bipedBody.addChild(ClothBackL1);
             bipedBody.addChild(ClothBackL2);
             bipedBody.addChild(ClothBackL3);
-        } else {
+        //} else {
             bipedBody.addChild(Chestplate);
             bipedBody.addChild(Chestthing);
             bipedBody.addChild(Scroll);
@@ -312,7 +314,7 @@ public class ModelRobeArmor extends BipedModel<LivingEntity> {
             bipedBody.addChild(Book);
             bipedBody.addChild(ClothchestL);
             bipedBody.addChild(ClothchestR);
-        }
+        //}
         //bipedRightArm.cubeList.clear();
         bipedRightArm.addChild(ShoulderR);
         bipedRightArm.addChild(RArm1);
@@ -345,6 +347,37 @@ public class ModelRobeArmor extends BipedModel<LivingEntity> {
         bipedLeftLeg.addChild(SideclothL1);
         bipedLeftLeg.addChild(SideclothL2);
         bipedLeftLeg.addChild(SideclothL3);
+    }
+
+    @Override
+    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
+        bipedHeadwear.showModel = false;
+        float legAngle = Math.min(bipedLeftLeg.rotateAngleX, bipedRightLeg.rotateAngleX);
+        ModelRenderer frontclothR1 = FrontclothR1;
+        ModelRenderer frontclothL1 = FrontclothL1;
+        float n = legAngle - 0.1047198f;
+        frontclothL1.rotateAngleX = n;
+        frontclothR1.rotateAngleX = n;
+        ModelRenderer frontclothR2 = FrontclothR2;
+        ModelRenderer frontclothL2 = FrontclothL2;
+        float n2 = legAngle - 0.3316126f;
+        frontclothL2.rotateAngleX = n2;
+        frontclothR2.rotateAngleX = n2;
+        ModelRenderer clothBackR1 = ClothBackR1;
+        ModelRenderer clothBackL1 = ClothBackL1;
+        float n3 = -legAngle + 0.1047198f;
+        clothBackL1.rotateAngleX = n3;
+        clothBackR1.rotateAngleX = n3;
+        ModelRenderer clothBackR2 = ClothBackR2;
+        ModelRenderer clothBackL2 = ClothBackL2;
+        ModelRenderer clothBackR3 = ClothBackR3;
+        ModelRenderer clothBackL3 = ClothBackL3;
+        float n4 = -legAngle + 0.2268928f;
+        clothBackL3.rotateAngleX = n4;
+        clothBackR3.rotateAngleX = n4;
+        clothBackL2.rotateAngleX = n4;
+        clothBackR2.rotateAngleX = n4;
+        super.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
     }
 
     private void setRotation(ModelRenderer model, float x, float y, float z) {

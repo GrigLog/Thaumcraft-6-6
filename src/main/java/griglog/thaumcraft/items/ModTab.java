@@ -1,5 +1,6 @@
 package griglog.thaumcraft.items;
 
+import griglog.thaumcraft.Thaumcraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -8,7 +9,7 @@ import net.minecraft.item.Items;
 public class ModTab extends ItemGroup {
     public static ModTab instance = new ModTab();
     public ModTab() {
-        super("thaumcraft");
+        super(Thaumcraft.id);
     }
 
     @Override
@@ -21,8 +22,6 @@ public class ModTab extends ItemGroup {
     }
 
     public static Item defaultItem(String id){
-        Item item = new Item(props()).setRegistryName(id);
-        ModItems.defaultModel.add(item);
-        return item;
+        return new Item(props()).setRegistryName(id);
     }
 }
