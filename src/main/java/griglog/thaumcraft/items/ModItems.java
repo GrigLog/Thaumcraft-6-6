@@ -1,14 +1,11 @@
 package griglog.thaumcraft.items;
 
-import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.items.armor.*;
 import griglog.thaumcraft.items.tools.elemental.*;
 import griglog.thaumcraft.items.tools.thaumium.*;
 import griglog.thaumcraft.items.tools.void_.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
-
-import java.util.Set;
 
 public class ModItems {
     public static final Item thaumiumSword = new ThaumiumSword();
@@ -31,23 +28,29 @@ public class ModItems {
 
     public static final Item primalCrusher = new PrimalCrusher();
 
-    public static final Item thaumiumIngot = ModTab.defaultItem("ingot_thaumium");
-    public static final Item brassIngot = ModTab.defaultItem("ingot_brass");
-    public static final Item voidIngot = ModTab.defaultItem("ingot_void");
+    public static final Item thaumiumIngot = defaultItem("ingot_thaumium");
+    public static final Item brassIngot = defaultItem("ingot_brass");
+    public static final Item voidIngot = defaultItem("ingot_void");
+    public static final Item quicksilver = defaultItem("quicksilver");
+    public static final Item ironCluster = defaultItem("cluster_iron");
+    public static final Item goldCluster = defaultItem("cluster_gold");
+    public static final Item copperCluster = defaultItem("cluster_copper");
+    public static final Item tinCluster = defaultItem("cluster_tin");
+    public static final Item silverCluster = defaultItem("cluster_silver");
+    public static final Item leadCluster = defaultItem("cluster_lead");
+    public static final Item cinnabarCluster = defaultItem("cluster_cinnabar");
+    public static final Item quartzCluster = defaultItem("cluster_quartz");
+    //"iron","copper","tin","silver","lead","quicksilver","thaumium","void","brass","quartz","rareearth"
+    public static final Item quicksilverNugget = defaultItem("nugget_quicksilver");
+    public static final Item thaumiumNugget = defaultItem("nugget_thaumium");
+    public static final Item voidNugget = defaultItem("nugget_void");
+    public static final Item brassNugget = defaultItem("nugget_brass");
+    public static final Item quartzNugget = defaultItem("nugget_quartz");
 
-    public static final Item ironCluster = ModTab.defaultItem("cluster_iron");
-    public static final Item goldCluster = ModTab.defaultItem("cluster_gold");
-    public static final Item copperCluster = ModTab.defaultItem("cluster_copper");
-    public static final Item tinCluster = ModTab.defaultItem("cluster_tin");
-    public static final Item silverCluster = ModTab.defaultItem("cluster_silver");
-    public static final Item leadCluster = ModTab.defaultItem("cluster_lead");
-    public static final Item cinnabarCluster = ModTab.defaultItem("cluster_cinnabar");
-    public static final Item quartzCluster = ModTab.defaultItem("cluster_quartz");
-
-    public static final Item fabric = ModTab.defaultItem("fabric");
+    public static final Item rareEarth = defaultItem("rare_earth");
+    public static final Item fabric = defaultItem("fabric");
 
     public static final Item travellerBoots = new TravellerBoots();
-
     public static final Item thaumiumHelmet = new ThaumiumArmor(EquipmentSlotType.HEAD);
     public static final Item thaumiumChestplate = new ThaumiumArmor(EquipmentSlotType.CHEST);
     public static final Item thaumiumLeggings = new ThaumiumArmor(EquipmentSlotType.LEGS);
@@ -73,10 +76,7 @@ public class ModItems {
     public static final Item voidRobeChest = new VoidRobeArmor(EquipmentSlotType.CHEST);
     public static final Item voidRobeLegs = new VoidRobeArmor(EquipmentSlotType.LEGS);
 
-
-    public static Set<Item> specialModel = ImmutableSet.of(clothChest, clothLegs, clothBoots, voidRobeHelm, voidRobeChest, voidRobeLegs);
-    public static Set<Item> toolModel = ImmutableSet.of(
-        thaumiumSword, thaumiumShovel, thaumiumPickaxe, thaumiumHoe, thaumiumAxe,
-        elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,
-        voidSword, voidShovel, voidPickaxe, voidHoe, voidAxe, primalCrusher);
+    public static Item defaultItem(String id){
+        return new Item(ModTab.props()).setRegistryName(id);
+    }
 }

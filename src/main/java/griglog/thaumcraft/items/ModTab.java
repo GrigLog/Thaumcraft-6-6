@@ -21,7 +21,4 @@ public class ModTab extends ItemGroup {
         return new Item.Properties().group(instance);
     }
 
-    public static Item defaultItem(String id){
-        return new Item(props()).setRegistryName(id);
-    }
 }

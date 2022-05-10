@@ -1,42 +1,48 @@
 package griglog.thaumcraft;
 
+import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.client.SoundsTC;
 import griglog.thaumcraft.items.ModItems;
-import net.minecraft.client.renderer.color.IItemColor;
-import net.minecraft.client.renderer.color.ItemColors;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.DyeableArmorItem;
+import griglog.thaumcraft.items.ModTab;
+import griglog.thaumcraft.utils.Utils;
+import griglog.thaumcraft.world.ModFeatures;
+import griglog.thaumcraft.world.MagicalForestBiome;
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.IRegistryDelegate;
-
-import java.lang.reflect.Field;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class Register {
     @SubscribeEvent
-    static void regItems(RegistryEvent.Register<Item> event) throws IllegalAccessException {
-        //TODO: reflection is bad for performance. Check execution time when there will be more entries
-        for (Field f : ModItems.class.getFields()){
-            Object obj = f.get(null);
-            if (obj instanceof Item)
-                event.getRegistry().register((Item)obj);
-        }
+    static void regItems(RegistryEvent.Register<Item> event){
+        event.getRegistry().registerAll(Utils.<Item>getFields(ModItems.class, Item.class, null).toArray(new Item[0]));
+        Utils.<Block>getFields(ModBlocks.class, Block.class, null)
+            .forEach(b -> event.getRegistry().register(new BlockItem(b, ModTab.props()).setRegistryName(b.getRegistryName())));
     }
 
     @SubscribeEvent
-    static void setupClient(FMLClientSetupEvent event){
+    static void regBlocks(RegistryEvent.Register<Block> event){
+        event.getRegistry().registerAll(Utils.<Block>getFields(ModBlocks.class, Block.class, null).toArray(new Block[0]));
+    }
 
-        ItemColors colors = event.getMinecraftSupplier().get().getItemColors();
-        IItemColor color = (stack, tintIndex) -> {
-            DyeableArmorItem item = (DyeableArmorItem) stack.getItem();
-            return (tintIndex > 0) ? -1 : item.getColor(stack);
-        };
-        colors.register(color, ModItems.clothBoots, ModItems.clothLegs, ModItems.clothChest, ModItems.voidRobeChest, ModItems.voidRobeLegs, ModItems.voidRobeHelm);
+    @SubscribeEvent
+    static void regFeatures(RegistryEvent.Register<Feature<?>> event){
+        event.getRegistry().registerAll(ModFeatures.silverTree, ModFeatures.greatTree, ModFeatures.bigTree);
+    }
+
+    @SubscribeEvent
+    static void registerBiome(RegistryEvent.Register<Biome> event) {
+        event.getRegistry().register(MagicalForestBiome.BIOME);
+        BiomeDictionary.addTypes(MagicalForestBiome.KEY, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.MAGICAL);
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(MagicalForestBiome.KEY, 10));
     }
 
     @SubscribeEvent
