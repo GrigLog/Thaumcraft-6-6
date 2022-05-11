@@ -1,5 +1,6 @@
 package griglog.thaumcraft;
 
+import griglog.thaumcraft.aura.Aura;
 import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.client.SoundsTC;
 import griglog.thaumcraft.items.ModItems;
@@ -15,9 +16,11 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class Register {
@@ -48,5 +51,10 @@ public class Register {
     @SubscribeEvent
     static void regSounds(RegistryEvent.Register<SoundEvent> event){
         SoundsTC.registerSounds(event);
+    }
+
+    @SubscribeEvent
+    public static void setup(final FMLCommonSetupEvent event) {
+        CapabilityManager.INSTANCE.register(Aura.class, new Aura.Storage(), Aura::new);
     }
 }
