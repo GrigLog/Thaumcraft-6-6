@@ -16,6 +16,7 @@ public class ServerEvents {
         for (ServerWorld sw : event.getServer().getWorlds()){
             AuraHandler.auras.put(sw, new AuraWorld(sw));
         }
+       // new Thread(AuraHandler::tick).start();
     }
 
     @SubscribeEvent

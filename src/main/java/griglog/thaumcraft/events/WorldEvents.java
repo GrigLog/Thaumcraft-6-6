@@ -2,6 +2,7 @@ package griglog.thaumcraft.events;
 
 import griglog.thaumcraft.aura.Aura;
 import griglog.thaumcraft.aura.AuraHandler;
+import griglog.thaumcraft.aura.AuraWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.event.TickEvent;
@@ -31,7 +32,7 @@ public class WorldEvents {
                 AuraHandler.auras.get(world).aura.putIfAbsent(chunk.getPos(), aura.ac);
             }
         });
-    }
+    }*/
 
     @SubscribeEvent
     static void unloadChunk(ChunkEvent.Unload event){
@@ -39,12 +40,11 @@ public class WorldEvents {
             return;
         Chunk chunk = (Chunk) event.getChunk();
         IWorld world = chunk.getWorld();
-        chunk.getCapability(Aura.Provider.AURA_CAP).ifPresent(aura -> {
-            if (AuraHandler.auras.containsKey(world)){
-                aura.ac = AuraHandler.auras.get(world).aura.remove(chunk.getPos());
-            }
-        });
-    }*/
+        AuraWorld aw = AuraHandler.auras.get(world);
+        if (aw == null)
+            return;
+        aw.cache.remove(chunk.getPos());
+    }
 
     /*@SubscribeEvent
     static void readData(ChunkDataEvent.Load event){

@@ -13,6 +13,8 @@ import java.util.*;
 public class AuraWorld {
     ServerWorld world;
     List<BlockPos> riftTrigger = new ArrayList<>();
+    public Map<ChunkPos, AuraChunk> cache = new HashMap<>();
+
     float phaseVis, phaseMax, phaseFlux;
     public AuraWorld(ServerWorld world){
         this.world = world;
@@ -35,7 +37,7 @@ public class AuraWorld {
                 }
             }
         }
-        Thaumcraft.LOGGER.info(world.getDimensionKey().getLocation() + " loaded " + loaded + " processed " + processed);
+        Thaumcraft.LOGGER.info(world.getDimensionKey().getLocation() + " loaded " + loaded + " processed " + processed + " cached " + cache.size());
     }
 
     void processChunk(ChunkPos pos, AuraChunk chunk){
@@ -53,7 +55,7 @@ public class AuraWorld {
         for (Integer a : directions) {
             Direction dir = Direction.byHorizontalIndex(a);
             ChunkPos nPos = new ChunkPos(x + dir.getXOffset(), z + dir.getZOffset());
-            AuraChunk n = AuraHandler.getAura(world, nPos);
+            AuraChunk n = getAura(nPos);
             if (n != null) {
                 if ((spreadVis == null || lowestVis > n.vis) && n.vis + n.flux < n.base * phaseMax) {
                     spreadVis = n;
@@ -91,5 +93,19 @@ public class AuraWorld {
         if (currentFlux > base * 0.75 && world.rand.nextFloat() < currentFlux / 5000f) {
             riftTrigger.add(new BlockPos(pos.x << 4, 0, pos.z << 4));
         }
+    }
+
+    public AuraChunk getAura(ChunkPos pos){
+        if (cache.containsKey(pos)){
+            return cache.get(pos);
+        } else {
+            AuraChunk ac = world.getChunk(pos.x, pos.z).getCapability(Aura.AURA_CAP).map(aura -> aura.ac).orElse(null);
+            cache.put(pos, ac);
+            return ac;
+        }
+    }
+
+    public AuraChunk getAura(BlockPos pos){
+        return getAura(new ChunkPos(pos));
     }
 }
