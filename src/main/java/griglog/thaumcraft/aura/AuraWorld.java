@@ -99,7 +99,7 @@ public class AuraWorld {
         if (cache.containsKey(pos)){
             return cache.get(pos);
         } else {
-            AuraChunk ac = world.getChunk(pos.x, pos.z).getCapability(Aura.AURA_CAP).map(aura -> aura.ac).orElse(null);
+            AuraChunk ac = world.getChunk(pos.x, pos.z).getCapability(Aura.CAPABILITY).map(aura -> aura.ac).orElse(null);
             cache.put(pos, ac);
             return ac;
         }

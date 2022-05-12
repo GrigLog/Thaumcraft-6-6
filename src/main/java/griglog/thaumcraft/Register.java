@@ -2,6 +2,7 @@ package griglog.thaumcraft;
 
 import griglog.thaumcraft.aura.Aura;
 import griglog.thaumcraft.blocks.ModBlocks;
+import griglog.thaumcraft.blocks.tiles.TileJar;
 import griglog.thaumcraft.client.SoundsTC;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.ModTab;
@@ -11,6 +12,7 @@ import griglog.thaumcraft.world.MagicalForestBiome;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
@@ -37,8 +39,13 @@ public class Register {
     }
 
     @SubscribeEvent
-    static void regFeatures(RegistryEvent.Register<Feature<?>> event){
+    static void regFeatures(RegistryEvent.Register<Feature<?>> event) {
         event.getRegistry().registerAll(ModFeatures.silverTree, ModFeatures.greatTree, ModFeatures.bigTree);
+    }
+
+    @SubscribeEvent
+    static void regTiles(RegistryEvent.Register<TileEntityType<?>> event){
+        event.getRegistry().registerAll(TileJar.type);
     }
 
     @SubscribeEvent
@@ -50,7 +57,8 @@ public class Register {
 
     @SubscribeEvent
     static void regSounds(RegistryEvent.Register<SoundEvent> event){
-        SoundsTC.registerSounds(event);
+        Utils.<SoundEvent>getFields(SoundsTC.class, SoundEvent.class, null)
+            .forEach((sound) -> event.getRegistry().register(sound));
     }
 
     @SubscribeEvent

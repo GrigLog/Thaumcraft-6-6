@@ -1,11 +1,9 @@
 {
     "forge_marker": 1,
-    "defaults":
-    {
-        "model": "thaumcraft:jar_normal",
-        "transform": "forge:default-block"
-    },
-    "variants": { 
-        "normal":[{}] 
+    "variants": {
+        "": {
+            "model": "thaumcraft:block/jar_normal",
+            "transform": "forge:default-block"
+        }
     }
 }

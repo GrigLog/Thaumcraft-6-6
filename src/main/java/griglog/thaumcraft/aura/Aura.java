@@ -1,15 +1,15 @@
 package griglog.thaumcraft.aura;
 
+import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.utils.BiomeInfo;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
@@ -20,11 +20,13 @@ import javax.annotation.Nullable;
 
 public class Aura {
     @CapabilityInject(Aura.class)
-    public static Capability<Aura> AURA_CAP;
-    public AuraChunk ac;
-    public Aura(){
+    public static Capability<Aura> CAPABILITY;
 
-    }
+    public static ResourceLocation id = new ResourceLocation(Thaumcraft.id, "aura");
+    public AuraChunk ac;
+
+    public Aura(){}
+
     public Aura(Chunk chunk){
         if (chunk.dirty) {
             World world = chunk.getWorld();
@@ -69,23 +71,23 @@ public class Aura {
         @Nonnull
         @Override
         public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-            return cap == AURA_CAP ? instance.cast() : LazyOptional.empty();
+            return cap == CAPABILITY ? instance.cast() : LazyOptional.empty();
         }
 
         @Nonnull
         @Override
         public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap) {
-            return cap == AURA_CAP ? instance.cast() : LazyOptional.empty();
+            return cap == CAPABILITY ? instance.cast() : LazyOptional.empty();
         }
 
         @Override
         public INBT serializeNBT() {
-            return AURA_CAP.getStorage().writeNBT(AURA_CAP, instance.resolve().get(), null);
+            return CAPABILITY.getStorage().writeNBT(CAPABILITY, instance.resolve().get(), null);
         }
 
         @Override
         public void deserializeNBT(INBT nbt) {
-            AURA_CAP.getStorage().readNBT(AURA_CAP, instance.resolve().get(), null, nbt);
+            CAPABILITY.getStorage().readNBT(CAPABILITY, instance.resolve().get(), null, nbt);
         }
     }
 

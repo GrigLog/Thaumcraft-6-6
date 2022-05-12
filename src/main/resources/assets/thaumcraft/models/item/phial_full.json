@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "thaumcraft:items/phial",
+    "layer1": "thaumcraft:items/phial_over"
+  }
+}

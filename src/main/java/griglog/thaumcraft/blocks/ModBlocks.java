@@ -16,6 +16,7 @@ public class ModBlocks {
     public static final Block greatLeaves = new LeavesBlock(leavesProps()).setRegistryName("leaves_greatwood");
     public static final Block greatSapling = new GreatSapling();
     public static final Block silverSapling = new SaplingBlock(new SilverTree(), saplingProps()).setRegistryName("sapling_silverwood");
+    public static final Block jar = new Jar();
 
     public static AbstractBlock.Properties props(Material mat){
         return AbstractBlock.Properties.create(mat);

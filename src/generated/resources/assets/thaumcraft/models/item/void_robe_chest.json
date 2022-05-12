@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "thaumcraft:items/void_robe_chest",
+    "layer1": "thaumcraft:items/void_robe_chest_over"
+  }
+}

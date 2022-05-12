@@ -2,7 +2,6 @@ package griglog.thaumcraft.data;
 
 import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.Thaumcraft;
-import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.block.Block;
@@ -23,17 +22,17 @@ public class ItemModelsProvider extends ItemModelProvider {
         super(generator, Thaumcraft.id, existingFileHelper);
     }
 
-    public static Set<Item> special = ImmutableSet.of(clothChest, clothLegs, clothBoots, voidRobeHelm, voidRobeChest, voidRobeLegs);
+    public static Set<Item> colored = ImmutableSet.of(clothChest, clothLegs, clothBoots, voidRobeHelm, voidRobeChest, voidRobeLegs);
     public static Set<Block> blockItems = ImmutableSet.of(silverLog, greatLog, silverLeaves, greatLeaves);
     public static Set<Item> tool = ImmutableSet.of(
         thaumiumSword, thaumiumShovel, thaumiumPickaxe, thaumiumHoe, thaumiumAxe,
         elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,
         voidSword, voidShovel, voidPickaxe, voidHoe, voidAxe, primalCrusher);
-
+    public static Set<Item> custom = ImmutableSet.of(phialEmpty, phialFull);
     @Override
     protected void registerModels() {
         for (Item item : Utils.<Item>getFields(ModItems.class, Item.class, null)){
-            if (!tool.contains(item) && !special.contains(item))
+            if (!tool.contains(item) && !colored.contains(item))
                 makeItemModel(item, "item/generated");
         }
         for (Block block : blockItems){
@@ -44,6 +43,17 @@ public class ItemModelsProvider extends ItemModelProvider {
             makeItemModel(item, "item/handheld");
         makeItemModel(greatSapling.asItem(), "item/generated", "block/");
         makeItemModel(silverSapling.asItem(), "item/generated", "block/");
+        for (Item item : colored){
+            makeColoredModel(item);
+        }
+    }
+
+
+    private void makeColoredModel(Item item){
+        String name = item.getRegistryName().getPath();
+        withExistingParent(name, "item/generated")
+            .texture("layer0", new ResourceLocation(Thaumcraft.id, "items/" + name))
+            .texture("layer1", new ResourceLocation(Thaumcraft.id, "items/" + name + "_over"));
     }
 
     private void makeItemModel(Item item, String parent) {
