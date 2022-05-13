@@ -32,6 +32,8 @@ public interface ISingleAspectContainer extends IAspectContainer{
         if (tag != getAspect() || getAmount() < amount)
             return false;
         take(amount);
+        if (getAmount() == 0)
+            changeAspect(Aspects.EMPTY);
         return true;
     }
 
@@ -39,12 +41,13 @@ public interface ISingleAspectContainer extends IAspectContainer{
     default int tryAdd(Aspect tag, int amount){
         if (getAspect() == Aspects.EMPTY){
             changeAspect(tag);
-            tryAdd(tag, amount);
         }
         if (tag != getAspect())
             return 0;
         int toAdd = Math.min(getCapacity() - getAmount(), amount);
         add(toAdd);
+        if (getAmount() == 0)
+            changeAspect(Aspects.EMPTY);
         return toAdd;
     }
 }

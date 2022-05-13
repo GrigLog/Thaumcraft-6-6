@@ -5,7 +5,7 @@
         "bottom": "thaumcraft:block/jar_bottom",
         "top": "thaumcraft:block/jar_top",
         "particle": "thaumcraft:block/jar_side",
-        "fluid": "thaumcraft:block/animatedglow"
+        "fluid": "thaumcraft:empty"
     },
     "display": {
         "gui": {

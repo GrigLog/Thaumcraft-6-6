@@ -6,10 +6,7 @@ import griglog.thaumcraft.client.SoundsTC;
 import griglog.thaumcraft.items.interfaces.IEssentiaContainerItem;
 import griglog.thaumcraft.utils.AuraHelper;
 import griglog.thaumcraft.utils.Utils;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ChestBlock;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.LivingEntity;
@@ -61,11 +58,11 @@ public class Jar extends Block {
         return new TileJar();
     }
 
-    /*
+
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-        return Block.makeCuboidShape(0.1875, 0.0, 0.1875, 0.8125, 0.75, 0.8125);
-    }*/
+        return Block.makeCuboidShape(3, 0, 3, 13, 12, 13);
+    }
 
     public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!state.matchesBlock(newState.getBlock())) {
@@ -76,6 +73,17 @@ public class Jar extends Block {
                 super.onReplaced(state, worldIn, pos, newState, isMoving);
             }
         }
+    }
+
+    @Override
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        if (stack.hasTag()) {
+            TileEntity tile = worldIn.getTileEntity(pos);
+            if (tile instanceof TileJar) {
+                ((TileJar) tile).ae = new AspectEntry(stack.getTag());
+            }
+        }
+        super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
     }
 
     private void spawnFilledJar(World world, BlockPos pos, BlockState state, TileJar te) {

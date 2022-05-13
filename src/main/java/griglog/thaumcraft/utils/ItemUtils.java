@@ -1,7 +1,10 @@
 package griglog.thaumcraft.utils;
 
+import griglog.thaumcraft.items.ModTab;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -31,5 +34,9 @@ public class ItemUtils {
             case HEAD:
                 return "helm";
         }
+    }
+
+    public static Item getItem(Block b){
+        return new BlockItem(b, ModTab.props()).setRegistryName(b.getRegistryName());
     }
 }

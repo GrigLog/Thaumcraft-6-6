@@ -2,6 +2,7 @@ package griglog.thaumcraft.data;
 
 import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.Thaumcraft;
+import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.block.Block;
@@ -29,10 +30,14 @@ public class ItemModelsProvider extends ItemModelProvider {
         elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,
         voidSword, voidShovel, voidPickaxe, voidHoe, voidAxe, primalCrusher);
     public static Set<Item> custom = ImmutableSet.of(phialEmpty, phialFull);
+    public static Set<Item> usual = ImmutableSet.of(thaumiumIngot, brassIngot, voidIngot, quicksilver,
+        ironCluster, goldCluster, copperCluster, tinCluster, silverCluster, leadCluster, cinnabarCluster, quartzCluster,
+        quicksilverNugget, voidNugget, thaumiumNugget, brassNugget, quartzNugget, rareEarth, fabric,
+        travellerBoots, thaumiumHelmet, thaumiumChestplate, thaumiumLeggings, thaumiumBoots, voidHelmet, voidChestplate, voidLeggings, voidBoots, cultHelm, cultChest, cultLegs, cultBoots, cultRobeHelm, cultRobeChest, cultRobeLegs, fortressHelm, fortressChest, fortressLegs);
     @Override
     protected void registerModels() {
-        for (Item item : Utils.<Item>getFields(ModItems.class, Item.class, null)){
-            if (!tool.contains(item) && !colored.contains(item))
+        for (Item item : usual){
+            if (!tool.contains(item) && !colored.contains(item) && !custom.contains(item))
                 makeItemModel(item, "item/generated");
         }
         for (Block block : blockItems){

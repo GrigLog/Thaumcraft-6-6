@@ -3,23 +3,23 @@
     
     "overrides": [
         {
-            "predicate": { "fill": 0 },
+            "predicate": { "thaumcraft:fill": 0 },
             "model": "thaumcraft:block/jar_normal"
         },
         {
-            "predicate": { "fill": 1 },
+            "predicate": { "thaumcraft:fill": 0.25 },
             "model": "thaumcraft:block/jar_normal_25"
         },
         {
-            "predicate": { "fill": 2 },
+            "predicate": { "thaumcraft:fill": 0.5 },
             "model": "thaumcraft:block/jar_normal_50"
         },
         {
-            "predicate": { "fill": 3 },
+            "predicate": { "thaumcraft:fill": 0.75 },
             "model": "thaumcraft:block/jar_normal_75"
         },
         {
-            "predicate": { "fill": 4 },
+            "predicate": { "thaumcraft:fill": 1 },
             "model": "thaumcraft:block/jar_normal_100"
         }
     ]

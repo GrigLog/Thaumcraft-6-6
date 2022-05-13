@@ -12,6 +12,9 @@ public class Aspects {
     public static Aspect get(String tag) {
         return aspects.get(tag);
     }
+    public static Aspect getSafe(String tag) {
+        return aspects.getOrDefault(tag, Aspects.EMPTY);
+    }
     private static ArrayList<Aspect> primals = new ArrayList<>();
     private static ArrayList<Aspect> compounds = new ArrayList<>();
 
