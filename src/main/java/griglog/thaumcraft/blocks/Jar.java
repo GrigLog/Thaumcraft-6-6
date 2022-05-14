@@ -3,40 +3,20 @@ package griglog.thaumcraft.blocks;
 import griglog.thaumcraft.aspect.*;
 import griglog.thaumcraft.blocks.tiles.TileJar;
 import griglog.thaumcraft.client.SoundsTC;
-import griglog.thaumcraft.items.interfaces.IEssentiaContainerItem;
-import griglog.thaumcraft.utils.AuraHelper;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.item.ExperienceOrbEntity;
-import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.IntNBT;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapeCube;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
-import java.util.Optional;
-import java.util.Random;
 
 public class Jar extends Block {
     public Jar(Properties props) {
@@ -91,6 +71,11 @@ public class Jar extends Block {
         if (te.ae.amount > 0)
             te.ae.write(Utils.safeTag(drop));
         spawnAsEntity(world, pos, drop);
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState bs) {
+        return BlockRenderType.ENTITYBLOCK_ANIMATED;
     }
 
     /*

@@ -6,15 +6,12 @@ import griglog.thaumcraft.blocks.tiles.TileJar;
 import griglog.thaumcraft.client.JarRenderer;
 import griglog.thaumcraft.client.SoundsTC;
 import griglog.thaumcraft.items.ModItems;
-import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.utils.ItemUtils;
 import griglog.thaumcraft.utils.Utils;
 import griglog.thaumcraft.world.ModFeatures;
 import griglog.thaumcraft.world.MagicalForestBiome;
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AtlasTexture;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
@@ -73,14 +70,15 @@ public class Register {
         if (event.getMap().getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)){
             event.addSprite(JarRenderer.EMPTY_TEXTURE);
         }
+
     }
 
-    /*@SubscribeEvent
+    @SubscribeEvent
     static void loadTextures(TextureStitchEvent.Post event){
-        if (event.getMap().getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)){
+        /*if (event.getMap().getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)){
             JarRenderer.sprite = event.getMap().getSprite(JarRenderer.EMPTY_TEXTURE);
-        }
-    }*/
+        }*/
+    }
 
     @SubscribeEvent
     public static void setup(final FMLCommonSetupEvent event) {

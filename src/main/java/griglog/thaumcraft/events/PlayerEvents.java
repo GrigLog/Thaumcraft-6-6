@@ -5,6 +5,7 @@ import griglog.thaumcraft.aura.AuraChunk;
 import griglog.thaumcraft.aura.AuraHandler;
 import griglog.thaumcraft.items.ModItems;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.TickEvent;

@@ -1,6 +1,5 @@
 package griglog.thaumcraft.blocks.tiles;
 
-import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.aspect.Aspect;
 import griglog.thaumcraft.aspect.AspectEntry;
 import griglog.thaumcraft.aspect.Aspects;
@@ -8,13 +7,9 @@ import griglog.thaumcraft.aspect.ISingleAspectContainer;
 import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.utils.TileWrapper;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tileentity.ChestTileEntity;
-import net.minecraft.tileentity.ShulkerBoxTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.math.AxisAlignedBB;
 
 public class TileJar extends TileEntity implements ISingleAspectContainer {
     public static TileEntityType<TileJar> type = TileWrapper.wrap("jar", TileJar::new, ModBlocks.jar);

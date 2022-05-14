@@ -1,22 +1,17 @@
 package griglog.thaumcraft;
 
-import griglog.thaumcraft.aspect.AspectEntry;
-import griglog.thaumcraft.aspect.AspectList;
 import griglog.thaumcraft.aspect.Aspects;
 import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.blocks.tiles.TileJar;
 import griglog.thaumcraft.client.JarRenderer;
 import griglog.thaumcraft.items.ModItems;
-import griglog.thaumcraft.items.interfaces.IEssentiaContainerItem;
 import griglog.thaumcraft.items.misc.Phial;
-import griglog.thaumcraft.utils.ItemUtils;
 import griglog.thaumcraft.world.ModFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.ItemColors;
-import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.DyeableArmorItem;
 import net.minecraft.item.ItemModelsProperties;
