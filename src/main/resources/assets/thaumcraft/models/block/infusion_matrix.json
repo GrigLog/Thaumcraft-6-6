@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "particle": "thaumcraft:blocks/infuser_normal",
-        "side": "thaumcraft:blocks/infuser_normal"
+        "particle": "thaumcraft:block/infuser_normal",
+        "side": "thaumcraft:block/infuser_normal"
     },
     "elements": [
         {

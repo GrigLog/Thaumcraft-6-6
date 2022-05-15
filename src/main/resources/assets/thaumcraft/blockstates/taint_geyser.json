@@ -3,10 +3,10 @@
     "defaults": {
         "model": "cube_bottom_top", 
         "textures": {
-            "particle": "thaumcraft:blocks/taint_geyser_side",
-            "bottom": "thaumcraft:blocks/log_taintwood_top",
-            "top": "thaumcraft:blocks/taint_geyser_top",
-            "side": "thaumcraft:blocks/taint_geyser_side"
+            "particle": "thaumcraft:block/taint_geyser_side",
+            "bottom": "thaumcraft:block/log_taintwood_top",
+            "top": "thaumcraft:block/taint_geyser_top",
+            "side": "thaumcraft:block/taint_geyser_side"
         },
         "transform": "forge:default-block"
      },

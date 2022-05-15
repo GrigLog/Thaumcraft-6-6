@@ -11,13 +11,13 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 
-public class TileJar extends TileEntity implements ISingleAspectContainer {
-    public static TileEntityType<TileJar> type = TileWrapper.wrap("jar", TileJar::new, ModBlocks.jar);
-    public TileJar(TileEntityType<?> type) {
+public class JarTile extends TileEntity implements ISingleAspectContainer {
+    public static TileEntityType<JarTile> type = TileWrapper.wrap(JarTile::new, ModBlocks.jar);
+    public JarTile(TileEntityType<?> type) {
         super(type);
     }
 
-    public TileJar(){
+    public JarTile(){
         this(type);
     }
 

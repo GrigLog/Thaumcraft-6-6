@@ -3,7 +3,7 @@
         "ctm_version": 1,
         "type":"CTM",
         "textures":[
-            "thaumcraft:blocks/plank_silverwood_ctm"
+            "thaumcraft:block/plank_silverwood_ctm"
         ],
         "extra":{
         	"ignore_states":"false"

@@ -1,9 +1,9 @@
 {
     "textures": {
-        "particle": "thaumcraft:blocks/levitator_top_off",
-        "top": "thaumcraft:blocks/levitator_top_on",
-        "side": "thaumcraft:blocks/levitator_side_on",
-        "bottom": "thaumcraft:blocks/levitator_bottom"
+        "particle": "thaumcraft:block/levitator_top_off",
+        "top": "thaumcraft:block/levitator_top_on",
+        "side": "thaumcraft:block/levitator_side_on",
+        "bottom": "thaumcraft:block/levitator_bottom"
     },
     "elements": [
         {

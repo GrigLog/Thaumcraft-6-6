@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "particle": "thaumcraft:blocks/brain_box",
-        "box": "thaumcraft:blocks/brain_box"
+        "particle": "thaumcraft:block/brain_box",
+        "box": "thaumcraft:block/brain_box"
     },
     "elements": [
         {

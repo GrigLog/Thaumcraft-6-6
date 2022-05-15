@@ -4,7 +4,7 @@
     {
         "transform": "forge:default-block",
         "model": "cube_all", 
-        "textures": {"all": "thaumcraft:blocks/empty"}
+        "textures": {"all": "thaumcraft:block/empty"}
     },
     "variants": {
         "normal": [{}], "inventory": [{}]

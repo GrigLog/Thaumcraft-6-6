@@ -2,11 +2,11 @@
     "forge_marker": 1,
     "defaults": {
         "model": "cross",
-        "textures": { "cross": "thaumcraft:blocks/vishroom" },
+        "textures": { "cross": "thaumcraft:block/vishroom" },
         "transform": "forge:default-block"
      },
     "variants": {
         "normal": [{}], "inventory": [{"model": "forge:item-layer", "transform": "forge:default-item",
-            "textures": { "layer0": "thaumcraft:blocks/vishroom" }}]
+            "textures": { "layer0": "thaumcraft:block/vishroom" }}]
     }
 }

@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "thaumcraft:blocks/nitor",
-        "layer1": "thaumcraft:blocks/nitor_core"
+        "layer0": "thaumcraft:block/nitor",
+        "layer1": "thaumcraft:block/nitor_core"
     }
 }

@@ -1,9 +1,9 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "over": "thaumcraft:blocks/inlay_rune_half",
-        "particle": "thaumcraft:blocks/inlay_under_half",
-        "under": "thaumcraft:blocks/inlay_under_half"
+        "over": "thaumcraft:block/inlay_rune_half",
+        "particle": "thaumcraft:block/inlay_under_half",
+        "under": "thaumcraft:block/inlay_under_half"
     },
     "elements": [
         {   "from": [ 0, 0.15, 16 ],

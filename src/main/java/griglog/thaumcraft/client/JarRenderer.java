@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.blocks.ModBlocks;
-import griglog.thaumcraft.blocks.tiles.TileJar;
+import griglog.thaumcraft.blocks.tiles.JarTile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.model.*;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class JarRenderer extends TileEntityRenderer<TileJar> {
+public class JarRenderer extends TileEntityRenderer<JarTile> {
     public JarRenderer(TileEntityRendererDispatcher dispatcher) {
         super(dispatcher);
     }
@@ -36,9 +36,9 @@ public class JarRenderer extends TileEntityRenderer<TileJar> {
     }
 
     @Override
-    public void render(TileJar tile, float partialTicks, MatrixStack ms, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
+    public void render(JarTile tile, float partialTicks, MatrixStack ms, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
         int color = tile.ae.type.color;
-        float filled = (float) tile.ae.amount / TileJar.CAPACITY;
+        float filled = (float) tile.ae.amount / JarTile.CAPACITY;
         ms.push();
         if (filled > 0){ //render liquid
             IVertexBuilder emptyBuilder = mat.getBuffer(buffer, (resourceLocation -> RenderType.getCutout()));

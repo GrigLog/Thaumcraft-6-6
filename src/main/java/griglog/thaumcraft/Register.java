@@ -2,9 +2,10 @@ package griglog.thaumcraft;
 
 import griglog.thaumcraft.aura.Aura;
 import griglog.thaumcraft.blocks.ModBlocks;
-import griglog.thaumcraft.blocks.tiles.TileJar;
+import griglog.thaumcraft.blocks.tiles.JarTile;
 import griglog.thaumcraft.client.JarRenderer;
 import griglog.thaumcraft.client.SoundsTC;
+import griglog.thaumcraft.entity.ModEntities;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.utils.ItemUtils;
 import griglog.thaumcraft.utils.Utils;
@@ -12,6 +13,7 @@ import griglog.thaumcraft.world.ModFeatures;
 import griglog.thaumcraft.world.MagicalForestBiome;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.AtlasTexture;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
@@ -32,7 +34,7 @@ public class Register {
     @SubscribeEvent
     static void regItems(RegistryEvent.Register<Item> event){
         event.getRegistry().registerAll(Utils.<Item>getFields(ModItems.class, Item.class, null).toArray(new Item[0]));
-        for (Block b : new Block[]{silverLog, silverLeaves, silverSapling, greatLeaves, greatLog, greatSapling, jar}){
+        for (Block b : ModItems.blockItems){
             event.getRegistry().register(ItemUtils.getItem(b));
         }
     }
@@ -49,7 +51,12 @@ public class Register {
 
     @SubscribeEvent
     static void regTiles(RegistryEvent.Register<TileEntityType<?>> event){
-        event.getRegistry().registerAll(TileJar.type);
+        event.getRegistry().registerAll(Utils.<TileEntityType<?>>getFields(ModBlocks.class, TileEntityType.class, null).toArray(new TileEntityType[0]));
+    }
+
+    @SubscribeEvent
+    static void regEntities(RegistryEvent.Register<EntityType<?>> event){
+        event.getRegistry().registerAll(Utils.<EntityType<?>>getFields(ModEntities.class, EntityType.class, null).toArray(new EntityType[0]));
     }
 
     @SubscribeEvent
@@ -70,7 +77,6 @@ public class Register {
         if (event.getMap().getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)){
             event.addSprite(JarRenderer.EMPTY_TEXTURE);
         }
-
     }
 
     @SubscribeEvent

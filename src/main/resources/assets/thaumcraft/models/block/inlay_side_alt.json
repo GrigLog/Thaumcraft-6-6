@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "thaumcraft:blocks/inlay_under",
-        "under": "thaumcraft:blocks/inlay_under"
+        "particle": "thaumcraft:block/inlay_under",
+        "under": "thaumcraft:block/inlay_under"
     },
     "elements": [
         {   "from": [ 0, 0.125, 8 ],

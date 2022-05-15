@@ -1,7 +1,7 @@
 package griglog.thaumcraft.items.tools.void_;
 
 import com.google.common.collect.ImmutableSet;
-import griglog.thaumcraft.items.interfaces.IWarpingGear;
+import griglog.thaumcraft.api.IWarpingGear;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumTier;
 import net.minecraft.entity.Entity;

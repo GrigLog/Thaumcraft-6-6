@@ -1,10 +1,10 @@
 {
     "textures": {
-        "particle": "thaumcraft:blocks/research_table_top",
-        "top": "thaumcraft:blocks/research_table_top",
-        "side": "thaumcraft:blocks/research_table_side",
-        "front": "thaumcraft:blocks/research_table_front",
-        "bottom": "thaumcraft:blocks/base_wood_grain"
+        "particle": "thaumcraft:block/research_table_top",
+        "top": "thaumcraft:block/research_table_top",
+        "side": "thaumcraft:block/research_table_side",
+        "front": "thaumcraft:block/research_table_front",
+        "bottom": "thaumcraft:block/base_wood_grain"
     },
     "elements": [
         {

@@ -4,7 +4,7 @@
     {
         "transform": "forge:default-block",
         "model": "cube_all",
-        "textures": { "all": "thaumcraft:blocks/ancient_glyph" }
+        "textures": { "all": "thaumcraft:block/ancient_glyph" }
     },
     "variants": {
         "normal": [{}], "inventory": [{}]

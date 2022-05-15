@@ -6,7 +6,7 @@
      },
      "variants": {
         "normal": [{}], "inventory": [{}],
-        "enabled=false": { "model": "thaumcraft:condenser", "textures": {"side": "thaumcraft:blocks/condenser_off"} },
+        "enabled=false": { "model": "thaumcraft:condenser", "textures": {"side": "thaumcraft:block/condenser_off"} },
         "enabled=true":  { "model": "thaumcraft:condenser" }
     }
 

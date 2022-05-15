@@ -1,7 +1,7 @@
 {
     "textures": {
-        "particle": "thaumcraft:blocks/taint_fibres",
-        "crust": "thaumcraft:blocks/taint_fibres"
+        "particle": "thaumcraft:block/taint_fibres",
+        "crust": "thaumcraft:block/taint_fibres"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

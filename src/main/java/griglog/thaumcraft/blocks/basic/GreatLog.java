@@ -1,4 +1,4 @@
-package griglog.thaumcraft.blocks;
+package griglog.thaumcraft.blocks.basic;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;

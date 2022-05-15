@@ -1,6 +1,6 @@
 package griglog.thaumcraft.items.tools.void_;
 
-import griglog.thaumcraft.items.interfaces.IWarpingGear;
+import griglog.thaumcraft.api.IWarpingGear;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumTier;
 import net.minecraft.client.util.ITooltipFlag;

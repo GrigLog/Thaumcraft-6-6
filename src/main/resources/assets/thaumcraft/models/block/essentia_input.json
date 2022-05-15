@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/essentia_input",
-        "particle": "thaumcraft:blocks/essentia_input"
+        "side": "thaumcraft:block/essentia_input",
+        "particle": "thaumcraft:block/essentia_input"
     },
     "elements": [
         {

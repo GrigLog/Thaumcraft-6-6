@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "model": "cube_all",
-        "textures": { "all": "thaumcraft:blocks/ore_quartz" },
+        "textures": { "all": "thaumcraft:block/ore_quartz" },
         "transform": "forge:default-block"
      },
     "variants": {

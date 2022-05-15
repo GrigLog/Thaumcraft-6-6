@@ -1,8 +1,10 @@
 package griglog.thaumcraft.utils;
 
+import griglog.thaumcraft.aura.AuraHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class AuraHelper {
 
@@ -15,7 +17,7 @@ public class AuraHelper {
      * @return how much was actually drained
      */
     public static float drainVis(World world, BlockPos pos, float amount, boolean simulate) {
-        return 0;
+        return AuraHandler.getAura((ServerWorld) world, pos).vis -= amount;
     }
 
     /**
@@ -28,7 +30,7 @@ public class AuraHelper {
      * @return how much was actually drained
      */
     public static float drainFlux(World world, BlockPos pos, float amount, boolean simulate) {
-        return 0;
+        return AuraHandler.getAura((ServerWorld) world, pos).flux -= amount;
     }
 
     /**
@@ -39,7 +41,7 @@ public class AuraHelper {
      * @param amount
      */
     public static void addVis(World world, BlockPos pos, float amount) {
-
+        AuraHandler.getAura((ServerWorld) world, pos).vis += amount;
     }
 
     /**
@@ -49,7 +51,7 @@ public class AuraHelper {
      * @return
      */
     public static float getVis(World world, BlockPos pos) {
-        return 0;
+        return AuraHandler.getAura((ServerWorld) world, pos).vis;
     }
 
     /**
@@ -60,7 +62,7 @@ public class AuraHelper {
      * @param showEffect if set to true, a flux smoke effect and sound will also be displayed. Use in moderation.
      */
     public static void polluteAura(World world, BlockPos pos, float amount, boolean showEffect) {
-
+        AuraHandler.getAura((ServerWorld) world, pos).flux += amount;
     }
 
     /**
@@ -70,7 +72,7 @@ public class AuraHelper {
      * @return
      */
     public static float getFlux(World world, BlockPos pos) {
-        return 0;
+        return AuraHandler.getAura((ServerWorld) world, pos).flux;
     }
 
     /**
@@ -79,8 +81,8 @@ public class AuraHelper {
      * @param pos
      * @return
      */
-    public static int getAuraBase(World world, BlockPos pos) {
-        return 0;
+    public static float getAuraBase(World world, BlockPos pos) {
+        return AuraHandler.getAura((ServerWorld) world, pos).base;
     }
 
     /**

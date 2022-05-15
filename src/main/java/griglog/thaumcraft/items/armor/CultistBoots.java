@@ -1,8 +1,8 @@
 package griglog.thaumcraft.items.armor;
 
 import griglog.thaumcraft.items.ModTab;
-import griglog.thaumcraft.items.interfaces.IVisDiscountGear;
-import griglog.thaumcraft.items.interfaces.IWarpingGear;
+import griglog.thaumcraft.api.IVisDiscountGear;
+import griglog.thaumcraft.api.IWarpingGear;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;

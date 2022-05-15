@@ -4,7 +4,7 @@
     {
         "transform": "forge:default-block",
         "model": "cube_all",
-        "textures": { "all": "thaumcraft:blocks/porous_stone" }
+        "textures": { "all": "thaumcraft:block/porous_stone" }
     },
     "variants": {
         "normal": [{}], "inventory": [{}]

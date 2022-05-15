@@ -9,10 +9,10 @@
         "variant": {
             "default": {
                 "textures": {
-                    "particle": "thaumcraft:blocks/plank_greatwood",
-                    "bottom": "thaumcraft:blocks/plank_greatwood",
-                    "top": "thaumcraft:blocks/plank_greatwood",
-                    "side": "thaumcraft:blocks/plank_greatwood"
+                    "particle": "thaumcraft:block/plank_greatwood",
+                    "bottom": "thaumcraft:block/plank_greatwood",
+                    "top": "thaumcraft:block/plank_greatwood",
+                    "side": "thaumcraft:block/plank_greatwood"
                 }
             }
         }        

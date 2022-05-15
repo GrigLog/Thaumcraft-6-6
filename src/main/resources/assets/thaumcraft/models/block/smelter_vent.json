@@ -1,7 +1,7 @@
 {
     "textures": {
-        "side": "thaumcraft:blocks/smelter_vent",
-        "particle": "thaumcraft:blocks/smelter_vent"
+        "side": "thaumcraft:block/smelter_vent",
+        "particle": "thaumcraft:block/smelter_vent"
     },
     "elements": [
         {

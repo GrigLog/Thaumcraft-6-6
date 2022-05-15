@@ -5,9 +5,9 @@
         "transform": "forge:default-block",
         "model": "cube_bottom_top", 
         "textures": {
-            "bottom": "thaumcraft:blocks/amber_top",
-            "top": "thaumcraft:blocks/amber_top",
-            "side": "thaumcraft:blocks/amber_side"
+            "bottom": "thaumcraft:block/amber_top",
+            "top": "thaumcraft:block/amber_top",
+            "side": "thaumcraft:block/amber_side"
         }
     },
     "variants": {

@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/bellows",
-        "particle": "thaumcraft:blocks/bellows"
+        "side": "thaumcraft:block/bellows",
+        "particle": "thaumcraft:block/bellows"
     },
     "elements": [
         {

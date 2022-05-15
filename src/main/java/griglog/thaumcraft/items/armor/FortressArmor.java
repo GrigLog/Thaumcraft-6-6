@@ -3,20 +3,17 @@ package griglog.thaumcraft.items.armor;
 import griglog.thaumcraft.client.models.ModelFortressArmor;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumMaterial;
-import griglog.thaumcraft.items.interfaces.IGoggles;
+import griglog.thaumcraft.api.IGoggles;
 import griglog.thaumcraft.utils.ItemUtils;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -26,7 +23,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class FortressArmor extends ArmorItem implements IGoggles {
     ModelFortressArmor model = new ModelFortressArmor();

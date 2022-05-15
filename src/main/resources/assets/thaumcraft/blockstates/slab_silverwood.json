@@ -9,10 +9,10 @@
         "variant": {
             "default": {
                 "textures": {
-                    "particle": "thaumcraft:blocks/plank_silverwood",
-                    "bottom": "thaumcraft:blocks/plank_silverwood",
-                    "top": "thaumcraft:blocks/plank_silverwood",
-                    "side": "thaumcraft:blocks/plank_silverwood"
+                    "particle": "thaumcraft:block/plank_silverwood",
+                    "bottom": "thaumcraft:block/plank_silverwood",
+                    "top": "thaumcraft:block/plank_silverwood",
+                    "side": "thaumcraft:block/plank_silverwood"
                 }
             }
         }        

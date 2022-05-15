@@ -3,7 +3,7 @@
     "defaults":
     {
         "transform": "forge:default-block",
-        "model": "cube_all", "textures": {"all": "thaumcraft:blocks/metal_void"}
+        "model": "cube_all", "textures": {"all": "thaumcraft:block/metal_void"}
     },
     "variants": {
         "normal": [{}], "inventory": [{}]

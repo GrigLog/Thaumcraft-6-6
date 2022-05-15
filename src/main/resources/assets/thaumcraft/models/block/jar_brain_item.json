@@ -1,12 +1,12 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "thaumcraft:blocks/jar_side",
-        "side": "thaumcraft:blocks/jar_side",
-        "bottom": "thaumcraft:blocks/jar_bottom",
-        "top": "thaumcraft:blocks/jar_top",
-        "brain": "thaumcraft:blocks/flesh",
-        "brine": "thaumcraft:blocks/jar_brine"
+        "particle": "thaumcraft:block/jar_side",
+        "side": "thaumcraft:block/jar_side",
+        "bottom": "thaumcraft:block/jar_bottom",
+        "top": "thaumcraft:block/jar_top",
+        "brain": "thaumcraft:block/flesh",
+        "brine": "thaumcraft:block/jar_brine"
     },
     "elements": [
         {

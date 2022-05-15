@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/tube",
-        "particle": "thaumcraft:blocks/base_metal"
+        "side": "thaumcraft:block/tube",
+        "particle": "thaumcraft:block/base_metal"
     },
     "elements": [
         {

@@ -3,8 +3,8 @@
     "defaults": {
         "model": "thaumcraft:infusion_matrix",
         "textures": {
-            "particle": "thaumcraft:blocks/infuser_normal",
-            "side": "thaumcraft:blocks/infuser_normal"
+            "particle": "thaumcraft:block/infuser_normal",
+            "side": "thaumcraft:block/infuser_normal"
         },
         "transform": "forge:default-block"
      },

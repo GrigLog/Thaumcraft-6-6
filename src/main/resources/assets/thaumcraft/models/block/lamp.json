@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "particle": "thaumcraft:blocks/lamp_off",
-        "side": "thaumcraft:blocks/lamp_off"
+        "particle": "thaumcraft:block/lamp_off",
+        "side": "thaumcraft:block/lamp_off"
     },
     "elements": [
         {

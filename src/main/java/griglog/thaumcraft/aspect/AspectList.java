@@ -153,6 +153,10 @@ public class AspectList implements Serializable {
         return this;
     }
 
+    public AspectList add(AspectEntry ae){
+        return add(ae.type, ae.amount);
+    }
+
     public AspectList add(AspectList in) {
         for (Aspect a : in.getAspects())
             add(a, in.getAmount(a));

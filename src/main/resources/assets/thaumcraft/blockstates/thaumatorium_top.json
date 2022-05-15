@@ -3,8 +3,8 @@
     "defaults": {
         "model": "thaumcraft:bellows",
         "textures": {
-            "particle": "thaumcraft:blocks/bellows",
-            "side": "thaumcraft:blocks/bellows"
+            "particle": "thaumcraft:block/bellows",
+            "side": "thaumcraft:block/bellows"
         },
         "transform": "forge:default-block"
      },

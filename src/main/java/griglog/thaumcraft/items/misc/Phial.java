@@ -3,7 +3,6 @@ package griglog.thaumcraft.items.misc;
 import griglog.thaumcraft.aspect.*;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.ModTab;
-import griglog.thaumcraft.items.interfaces.SimpleEssentiaItem;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -43,19 +42,21 @@ public class Phial extends Item {
             ItemStack is = ctx.getItem();
             IAspectContainer container = (IAspectContainer) tile;
             if (full && container.tryAdd(getAspect(is), 10) != 0) {
-                if (!ctx.getPlayer().isCreative())
+                if (!ctx.getPlayer().isCreative()) {
                     is.shrink(1);
-                ItemStack replace = new ItemStack(ModItems.phialEmpty);
-                ctx.getPlayer().addItemStackToInventory(replace);
+                    ItemStack replace = new ItemStack(ModItems.phialEmpty);
+                    ctx.getPlayer().addItemStackToInventory(replace);
+                }
                 return ActionResultType.CONSUME;
             }
             if (!full){
                 Aspect[] arr = container.readList().getAspectsSortedByAmount();
                 if (arr.length > 0 && container.tryTake(arr[0], 10)){
-                    if (!ctx.getPlayer().isCreative())
+                    if (!ctx.getPlayer().isCreative()) {
                         is.shrink(1);
-                    ItemStack replace = makePhial(arr[0]);
-                    ctx.getPlayer().addItemStackToInventory(replace);
+                        ItemStack replace = makePhial(arr[0]);
+                        ctx.getPlayer().addItemStackToInventory(replace);
+                    }
                     return ActionResultType.CONSUME;
                 }
             }

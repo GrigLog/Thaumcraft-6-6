@@ -1,7 +1,7 @@
 {
     "textures": {
-        "side": "thaumcraft:blocks/everfull_urn",
-        "particle": "thaumcraft:blocks/everfull_urn"
+        "side": "thaumcraft:block/everfull_urn",
+        "particle": "thaumcraft:block/everfull_urn"
     },
     "elements": [
         {

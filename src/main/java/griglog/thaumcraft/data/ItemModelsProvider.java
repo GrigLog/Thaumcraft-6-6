@@ -24,7 +24,7 @@ public class ItemModelsProvider extends ItemModelProvider {
     }
 
     public static Set<Item> colored = ImmutableSet.of(clothChest, clothLegs, clothBoots, voidRobeHelm, voidRobeChest, voidRobeLegs);
-    public static Set<Block> blockItems = ImmutableSet.of(silverLog, greatLog, silverLeaves, greatLeaves);
+    public static Set<Block> blockItems = ImmutableSet.of(silverLog, greatLog, silverLeaves, greatLeaves, crucible);
     public static Set<Item> tool = ImmutableSet.of(
         thaumiumSword, thaumiumShovel, thaumiumPickaxe, thaumiumHoe, thaumiumAxe,
         elementalSword, elementalShovel, elementalPickaxe, elementalHoe, elementalAxe,

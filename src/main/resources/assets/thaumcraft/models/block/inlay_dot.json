@@ -1,9 +1,9 @@
 {
     "ambientocclusion": false,
     "textures": {        
-        "under": "thaumcraft:blocks/inlay_connect_under",
-        "under2": "thaumcraft:blocks/inlay_connect_under2",
-        "particle": "thaumcraft:blocks/inlay_connect_under"        
+        "under": "thaumcraft:block/inlay_connect_under",
+        "under2": "thaumcraft:block/inlay_connect_under2",
+        "particle": "thaumcraft:block/inlay_connect_under"
     },
     "elements": [
         {   "from": [ 0, 0.175, 0 ],

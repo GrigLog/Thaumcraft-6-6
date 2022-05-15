@@ -3,7 +3,7 @@
     "defaults": {
         "transform": "forge:default-block", 
         "model": "thaumcraft:arcane_workbench_charger.obj", 
-        "textures": {"#texture": "thaumcraft:blocks/arcane_workbench_charger"}
+        "textures": {"#texture": "thaumcraft:block/arcane_workbench_charger"}
      },
     "variants": {
         "inventory": [{}], "normal": [{}]

@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "particle": "thaumcraft:blocks/alembic_normal",
-        "side": "thaumcraft:blocks/alembic_normal"
+        "particle": "thaumcraft:block/alembic_normal",
+        "side": "thaumcraft:block/alembic_normal"
     },
     "elements": [
         {

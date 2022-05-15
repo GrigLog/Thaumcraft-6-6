@@ -1,10 +1,10 @@
 {
     "textures": {
-        "particle": "thaumcraft:blocks/redstone_relay_off",
+        "particle": "thaumcraft:block/redstone_relay_off",
         "torch": "blocks/redstone_torch_off",
         "slab": "blocks/stone_slab_top",
-        "top": "thaumcraft:blocks/redstone_relay_off",
-        "side": "thaumcraft:blocks/levitator_side_off"
+        "top": "thaumcraft:block/redstone_relay_off",
+        "side": "thaumcraft:block/levitator_side_off"
     },
     "elements": [
         {

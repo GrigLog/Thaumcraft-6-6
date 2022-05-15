@@ -1,11 +1,11 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/jar_side_void",
-        "bottom": "thaumcraft:blocks/jar_bottom",
-        "top": "thaumcraft:blocks/jar_top_void",
-        "particle": "thaumcraft:blocks/jar_side_void",
-        "fluid": "thaumcraft:blocks/animatedglow"
+        "side": "thaumcraft:block/jar_side_void",
+        "bottom": "thaumcraft:block/jar_bottom",
+        "top": "thaumcraft:block/jar_top_void",
+        "particle": "thaumcraft:block/jar_side_void",
+        "fluid": "thaumcraft:block/animatedglow"
     },
     "display": {
         "gui": {

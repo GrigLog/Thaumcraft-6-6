@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/condenser",
-        "particle": "thaumcraft:blocks/condenser"
+        "side": "thaumcraft:block/condenser",
+        "particle": "thaumcraft:block/condenser"
     },
     "elements": [
         {

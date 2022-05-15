@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "base": "thaumcraft:blocks/vis_generator",
-        "particle": "thaumcraft:blocks/vis_generator"
+        "base": "thaumcraft:block/vis_generator",
+        "particle": "thaumcraft:block/vis_generator"
     },
     "elements": [
         {

@@ -2,18 +2,14 @@ package griglog.thaumcraft.items.armor;
 
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumMaterial;
-import griglog.thaumcraft.items.interfaces.IWarpingGear;
+import griglog.thaumcraft.api.IWarpingGear;
 import griglog.thaumcraft.items.tools.void_.VoidHelper;
 import griglog.thaumcraft.utils.ItemUtils;
-import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class VoidArmor extends ArmorItem implements IWarpingGear {
 

@@ -1,11 +1,11 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/recharge_pedestal_side",
-        "top": "thaumcraft:blocks/recharge_pedestal_top",
-        "gem": "thaumcraft:blocks/recharge_pedestal_gem",
-        "bottom": "thaumcraft:blocks/pedestal_top",
-        "particle": "thaumcraft:blocks/recharge_pedestal_side"
+        "side": "thaumcraft:block/recharge_pedestal_side",
+        "top": "thaumcraft:block/recharge_pedestal_top",
+        "gem": "thaumcraft:block/recharge_pedestal_gem",
+        "bottom": "thaumcraft:block/pedestal_top",
+        "particle": "thaumcraft:block/recharge_pedestal_side"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

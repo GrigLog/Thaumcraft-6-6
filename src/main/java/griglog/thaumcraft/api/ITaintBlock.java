@@ -1,4 +1,4 @@
-package griglog.thaumcraft.blocks;
+package griglog.thaumcraft.api;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;

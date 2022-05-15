@@ -1,4 +1,4 @@
-package griglog.thaumcraft.items.interfaces;
+package griglog.thaumcraft.api;
 
 import griglog.thaumcraft.aspect.AspectList;
 import net.minecraft.item.ItemStack;

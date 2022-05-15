@@ -1,8 +1,8 @@
 {
     "textures": {
-        "side": "thaumcraft:blocks/pedestal_side",
-        "top": "thaumcraft:blocks/pedestal_top",
-        "particle": "thaumcraft:blocks/pedestal_side"
+        "side": "thaumcraft:block/pedestal_side",
+        "top": "thaumcraft:block/pedestal_top",
+        "particle": "thaumcraft:block/pedestal_side"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

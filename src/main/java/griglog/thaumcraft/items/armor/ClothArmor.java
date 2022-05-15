@@ -3,7 +3,7 @@ package griglog.thaumcraft.items.armor;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumMaterial;
-import griglog.thaumcraft.items.interfaces.IVisDiscountGear;
+import griglog.thaumcraft.api.IVisDiscountGear;
 import griglog.thaumcraft.utils.ItemUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -57,7 +57,7 @@ public class ClothArmor extends DyeableArmorItem implements IVisDiscountGear {
         return compoundnbt != null && compoundnbt.contains("color", 99) ? compoundnbt.getInt("color") : 0x6A3880;
     }
 
-
+    /*
     @Override
     public ActionResultType onItemUseFirst(ItemStack stack, ItemUseContext context) {
         World world = context.getWorld();
@@ -71,5 +71,5 @@ public class ClothArmor extends DyeableArmorItem implements IVisDiscountGear {
             return ActionResultType.SUCCESS;
         }
         return super.onItemUseFirst(stack, context);
-    }
+    }*/
 }

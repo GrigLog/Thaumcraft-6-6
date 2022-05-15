@@ -1,6 +1,6 @@
 {
     "textures": {
-        "sde": "thaumcraft:blocks/taint_growth_3"
+        "sde": "thaumcraft:block/taint_growth_3"
     },
     "elements": [
         {

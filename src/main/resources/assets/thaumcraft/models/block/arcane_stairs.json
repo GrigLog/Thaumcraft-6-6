@@ -1,8 +1,8 @@
 {
     "parent": "block/stairs",
     "textures": {
-        "bottom": "thaumcraft:blocks/arcane_stone_1",
-        "top": "thaumcraft:blocks/arcane_stone_2",
-        "side": "thaumcraft:blocks/arcane_stone_3"
+        "bottom": "thaumcraft:block/arcane_stone_1",
+        "top": "thaumcraft:block/arcane_stone_2",
+        "side": "thaumcraft:block/arcane_stone_3"
     }
 }

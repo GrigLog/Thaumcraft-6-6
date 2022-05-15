@@ -1,18 +1,15 @@
 package griglog.thaumcraft.items.tools.void_;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumTier;
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
-import griglog.thaumcraft.items.interfaces.IWarpingGear;
+import griglog.thaumcraft.api.IWarpingGear;
 import griglog.thaumcraft.utils.WorldUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.*;

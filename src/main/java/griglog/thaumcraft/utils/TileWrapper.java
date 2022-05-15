@@ -10,4 +10,8 @@ public class TileWrapper {
     public static <T extends TileEntity> TileEntityType<T> wrap(String name, Supplier<? extends T> factoryIn, Block... validBlocks){
         return (TileEntityType<T>) TileEntityType.Builder.create(factoryIn, validBlocks).build(null).setRegistryName(name);
     }
+
+    public static <T extends TileEntity> TileEntityType<T> wrap(Supplier<? extends T> factoryIn, Block validBlock){
+        return wrap(validBlock.getRegistryName().toString(), factoryIn, validBlock);
+    }
 }

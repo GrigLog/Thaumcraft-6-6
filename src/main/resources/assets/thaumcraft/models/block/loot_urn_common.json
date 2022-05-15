@@ -1,9 +1,9 @@
 {
     "textures": {
-        "side": "thaumcraft:blocks/loot_urn_side_0",
-        "bottom": "thaumcraft:blocks/loot_urn_top",
-        "top": "thaumcraft:blocks/loot_urn_top",
-        "particle": "thaumcraft:blocks/loot_urn_side_0"
+        "side": "thaumcraft:block/loot_urn_side_0",
+        "bottom": "thaumcraft:block/loot_urn_top",
+        "top": "thaumcraft:block/loot_urn_top",
+        "particle": "thaumcraft:block/loot_urn_side_0"
     },
     "elements": [
         {

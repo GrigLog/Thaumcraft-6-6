@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/stabilizer",
-        "particle": "thaumcraft:blocks/arcane_stone_1"
+        "side": "thaumcraft:block/stabilizer",
+        "particle": "thaumcraft:block/arcane_stone_1"
     },
     "elements": [
         {

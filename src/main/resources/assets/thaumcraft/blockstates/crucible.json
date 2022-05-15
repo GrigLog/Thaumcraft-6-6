@@ -1,11 +1,16 @@
 {
-    "forge_marker": 1,
-    "defaults": {
-        "transform": "forge:default-block",
-        "model": "thaumcraft:crucible"
-     },
-     "variants": {
-        "normal": [{}], "inventory": [{}]
+  "variants": {
+    "level=0": {
+      "model": "thaumcraft:block/crucible"
+    },
+    "level=1": {
+      "model": "thaumcraft:block/crucible_level1"
+    },
+    "level=2": {
+      "model": "thaumcraft:block/crucible_level2"
+    },
+    "level=3": {
+      "model": "thaumcraft:block/crucible_level3"
     }
-
+  }
 }

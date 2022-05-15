@@ -2,9 +2,9 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "particle": "thaumcraft:blocks/smelter_aux",
-        "side": "thaumcraft:blocks/smelter_aux",
-        "pump": "thaumcraft:blocks/smelter_aux_pump"
+        "particle": "thaumcraft:block/smelter_aux",
+        "side": "thaumcraft:block/smelter_aux",
+        "pump": "thaumcraft:block/smelter_aux_pump"
     },
     "elements": [
         {

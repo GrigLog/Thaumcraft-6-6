@@ -2,8 +2,8 @@
     "textures": {
         "side": "blocks/hopper_outside",
         "top": "blocks/hopper_top",
-        "panels": "thaumcraft:blocks/pattern_crafter",
-        "particle": "thaumcraft:blocks/pattern_crafter",
+        "panels": "thaumcraft:block/pattern_crafter",
+        "particle": "thaumcraft:block/pattern_crafter",
         "inside": "blocks/hopper_inside"
     },
     "elements": [

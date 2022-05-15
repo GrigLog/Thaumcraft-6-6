@@ -4,8 +4,8 @@
     {
         "model": "thaumcraft:empty",
         "textures": {
-            "particle": "thaumcraft:blocks/nitor",
-            "all": "thaumcraft:blocks/nitor"
+            "particle": "thaumcraft:block/nitor",
+            "all": "thaumcraft:block/nitor"
         },
         "transform": "forge:default-block"
     },

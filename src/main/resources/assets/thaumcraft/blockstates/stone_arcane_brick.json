@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "model": "cube_all", 
-        "textures": { "all": "thaumcraft:blocks/arcane_brick_stone" },
+        "textures": { "all": "thaumcraft:block/arcane_brick_stone" },
         "transform": "forge:default-block"
      },
     "variants": {

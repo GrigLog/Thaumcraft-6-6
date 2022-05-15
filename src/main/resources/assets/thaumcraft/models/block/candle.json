@@ -56,8 +56,8 @@
         }
     ],    
     "textures": {
-        "all": "thaumcraft:blocks/candle",
-        "stub": "thaumcraft:blocks/candlestub",
-        "particle": "thaumcraft:blocks/candle"
+        "all": "thaumcraft:block/candle",
+        "stub": "thaumcraft:block/candlestub",
+        "particle": "thaumcraft:block/candle"
     }
 }

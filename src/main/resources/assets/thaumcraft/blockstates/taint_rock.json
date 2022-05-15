@@ -6,12 +6,12 @@
      },
     "variants": {
         "normal": [
-            { "model": "cube_all", "textures": {"all": "thaumcraft:blocks/taint_rock"} },
-            { "model": "cube_all", "textures": {"all": "thaumcraft:blocks/taint_rock"}, "x": 90 },
-            { "model": "cube_all", "textures": {"all": "thaumcraft:blocks/taint_rock"}, "y": 90 },
-            { "model": "cube_all", "textures": {"all": "thaumcraft:blocks/taint_rock"}, "x": 90, "y": 90 }
+            { "model": "cube_all", "textures": {"all": "thaumcraft:block/taint_rock"} },
+            { "model": "cube_all", "textures": {"all": "thaumcraft:block/taint_rock"}, "x": 90 },
+            { "model": "cube_all", "textures": {"all": "thaumcraft:block/taint_rock"}, "y": 90 },
+            { "model": "cube_all", "textures": {"all": "thaumcraft:block/taint_rock"}, "x": 90, "y": 90 }
             ], 
-        "inventory": [{ "model": "cube_all", "textures": {"all": "thaumcraft:blocks/taint_rock"} }]
+        "inventory": [{ "model": "cube_all", "textures": {"all": "thaumcraft:block/taint_rock"} }]
     }    
 }
 

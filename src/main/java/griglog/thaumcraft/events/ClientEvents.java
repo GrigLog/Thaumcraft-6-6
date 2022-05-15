@@ -2,25 +2,20 @@ package griglog.thaumcraft.events;
 
 import griglog.thaumcraft.client.JarRenderer;
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
-import griglog.thaumcraft.items.interfaces.IEssentiaContainerItem;
-import griglog.thaumcraft.items.interfaces.IRechargable;
-import griglog.thaumcraft.items.interfaces.IVisDiscountGear;
-import griglog.thaumcraft.items.interfaces.IWarpingGear;
+import griglog.thaumcraft.api.IRechargable;
+import griglog.thaumcraft.api.IVisDiscountGear;
+import griglog.thaumcraft.api.IWarpingGear;
 import griglog.thaumcraft.utils.RechargeHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.Locale;
 
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber

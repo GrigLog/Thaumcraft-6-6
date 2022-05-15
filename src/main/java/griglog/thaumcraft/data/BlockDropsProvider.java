@@ -44,6 +44,7 @@ public class BlockDropsProvider extends LootTableProvider {
     public BlockDropsProvider(DataGenerator dataGeneratorIn) {
         super(dataGeneratorIn);
         generator = dataGeneratorIn;
+        putEmpty(jar);
     }
 
     static Set<Block> special = ImmutableSet.of(silverLeaves, greatLeaves);
@@ -76,6 +77,10 @@ public class BlockDropsProvider extends LootTableProvider {
         return LootTable.builder().addLootPool(
             LootPool.builder().rolls(ConstantRange.of(1)).addEntry(
                 ItemLootEntry.builder(b).acceptCondition(SurvivesExplosion.builder())));
+    }
+
+    void putEmpty(Block b){
+        lootTables.put(b, LootTable.builder());
     }
 
     LootTable.Builder silk(IItemProvider normal, IItemProvider silk){

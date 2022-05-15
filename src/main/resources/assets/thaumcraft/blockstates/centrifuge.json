@@ -3,8 +3,8 @@
     "defaults": {
         "model": "thaumcraft:centrifuge",
         "textures": {
-            "particle": "thaumcraft:blocks/centrifuge",
-            "side": "thaumcraft:blocks/centrifuge"
+            "particle": "thaumcraft:block/centrifuge",
+            "side": "thaumcraft:block/centrifuge"
         },
         "transform": "forge:default-block"
      },

@@ -1,12 +1,10 @@
 package griglog.thaumcraft.utils;
 
-import griglog.thaumcraft.items.interfaces.IRechargable;
-import griglog.thaumcraft.utils.Utils;
+import griglog.thaumcraft.api.IRechargable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.IntNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 

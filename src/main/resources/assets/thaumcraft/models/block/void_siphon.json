@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/void_siphon",
-        "particle": "thaumcraft:blocks/void_siphon"
+        "side": "thaumcraft:block/void_siphon",
+        "particle": "thaumcraft:block/void_siphon"
     },
     "elements": [
         {

@@ -22,7 +22,7 @@ public class AuraHandler {
         for (AuraWorld aw : auras.values()) {
             aw.process();
         }
-        Thaumcraft.LOGGER.info("took " + (Instant.now().toEpochMilli() - start) + " ms");
+        //Thaumcraft.LOGGER.info("took " + (Instant.now().toEpochMilli() - start) + " ms");
         /*
         try {
             Thread.sleep(1000);

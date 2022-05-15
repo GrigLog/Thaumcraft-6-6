@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "model": "cube_all",
-        "textures": { "all": "thaumcraft:blocks/ore_amber" },
+        "textures": { "all": "thaumcraft:block/ore_amber" },
         "transform": "forge:default-block"
      },
     "variants": {

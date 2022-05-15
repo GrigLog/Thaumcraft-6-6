@@ -1,10 +1,9 @@
 package griglog.thaumcraft.items.armor;
 
-import griglog.thaumcraft.events.PlayerEvents;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumMaterial;
-import griglog.thaumcraft.items.interfaces.IRechargable;
+import griglog.thaumcraft.api.IRechargable;
 import griglog.thaumcraft.utils.RechargeHelper;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.entity.Entity;
@@ -15,8 +14,6 @@ import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

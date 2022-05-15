@@ -4,12 +4,12 @@
         "model": "cube",
         "transform": "forge:default-block",
         "textures": {
-                "north": "thaumcraft:blocks/spa_side",  
-                "south": "thaumcraft:blocks/spa_side",      
-                "east": "thaumcraft:blocks/spa_side",
-                "west": "thaumcraft:blocks/spa_side",
-                "particle": "thaumcraft:blocks/spa_side",   
-                "up": "thaumcraft:blocks/spa_top",
+                "north": "thaumcraft:block/spa_side",
+                "south": "thaumcraft:block/spa_side",
+                "east": "thaumcraft:block/spa_side",
+                "west": "thaumcraft:block/spa_side",
+                "particle": "thaumcraft:block/spa_side",
+                "up": "thaumcraft:block/spa_top",
                 "down": "blocks/furnace_top"
              }
      },

@@ -1,5 +1,6 @@
-package griglog.thaumcraft.blocks;
+package griglog.thaumcraft.blocks.basic;
 
+import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.world.GreatTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class GreatSapling extends SaplingBlock {
-    GreatSapling(){
+    public GreatSapling(){
         super(new GreatTree(), ModBlocks.saplingProps());
         setRegistryName("sapling_greatwood");
     }

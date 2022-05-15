@@ -1,4 +1,4 @@
-package griglog.thaumcraft.items.interfaces;
+package griglog.thaumcraft.api;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

@@ -2,20 +2,18 @@ package griglog.thaumcraft.items.armor;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import griglog.thaumcraft.client.models.ModelFortressArmor;
 import griglog.thaumcraft.client.models.ModelRobeArmor;
 import griglog.thaumcraft.items.ModTab;
 import griglog.thaumcraft.items.ThaumMaterial;
-import griglog.thaumcraft.items.interfaces.IGoggles;
-import griglog.thaumcraft.items.interfaces.IVisDiscountGear;
-import griglog.thaumcraft.items.interfaces.IWarpingGear;
+import griglog.thaumcraft.api.IGoggles;
+import griglog.thaumcraft.api.IVisDiscountGear;
+import griglog.thaumcraft.api.IWarpingGear;
 import griglog.thaumcraft.items.tools.void_.VoidHelper;
 import griglog.thaumcraft.utils.ItemUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CauldronBlock;
 import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
@@ -25,18 +23,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.state.Property;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.w3c.dom.Attr;
-
-import java.util.UUID;
 
 public class VoidRobeArmor extends DyeableArmorItem implements IVisDiscountGear, IGoggles, IWarpingGear {
     BipedModel<LivingEntity> model = new ModelRobeArmor();
@@ -113,6 +103,7 @@ public class VoidRobeArmor extends DyeableArmorItem implements IVisDiscountGear,
     }
     */
 
+    /*
     @Override
     public ActionResultType onItemUseFirst(ItemStack stack, ItemUseContext context) {
         World world = context.getWorld();
@@ -126,7 +117,7 @@ public class VoidRobeArmor extends DyeableArmorItem implements IVisDiscountGear,
             return ActionResultType.SUCCESS;
         }
         return super.onItemUseFirst(stack, context);
-    }
+    }*/
 
     public int getWarp(ItemStack itemstack, PlayerEntity player) {
         return 3;

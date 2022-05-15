@@ -2,7 +2,7 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "side": "thaumcraft:blocks/infernal_furnace",
+        "side": "thaumcraft:block/infernal_furnace",
         "core": "blocks/lava_still",
         "fire": "blocks/fire_layer_0"
     },

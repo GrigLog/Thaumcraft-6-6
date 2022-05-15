@@ -1,7 +1,7 @@
-package griglog.thaumcraft.blocks;
+package griglog.thaumcraft.blocks.tiles;
 
 import griglog.thaumcraft.aspect.*;
-import griglog.thaumcraft.blocks.tiles.TileJar;
+import griglog.thaumcraft.blocks.tiles.JarTile;
 import griglog.thaumcraft.client.SoundsTC;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.block.*;
@@ -35,7 +35,7 @@ public class Jar extends Block {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new TileJar();
+        return new JarTile();
     }
 
 
@@ -47,8 +47,8 @@ public class Jar extends Block {
     public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!state.matchesBlock(newState.getBlock())) {
             TileEntity tile = worldIn.getTileEntity(pos);
-            if (tile instanceof TileJar) {
-                spawnFilledJar(worldIn, pos, state, (TileJar) tile);
+            if (tile instanceof JarTile) {
+                spawnFilledJar(worldIn, pos, state, (JarTile) tile);
             } else {
                 super.onReplaced(state, worldIn, pos, newState, isMoving);
             }
@@ -59,14 +59,14 @@ public class Jar extends Block {
     public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         if (stack.hasTag()) {
             TileEntity tile = worldIn.getTileEntity(pos);
-            if (tile instanceof TileJar) {
-                ((TileJar) tile).ae = new AspectEntry(stack.getTag());
+            if (tile instanceof JarTile) {
+                ((JarTile) tile).ae = new AspectEntry(stack.getTag());
             }
         }
         super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
     }
 
-    private void spawnFilledJar(World world, BlockPos pos, BlockState state, TileJar te) {
+    private void spawnFilledJar(World world, BlockPos pos, BlockState state, JarTile te) {
         ItemStack drop = new ItemStack(this);
         if (te.ae.amount > 0)
             te.ae.write(Utils.safeTag(drop));
@@ -175,8 +175,8 @@ public class Jar extends Block {
 
     public int getComparatorInputOverride(BlockState state, World world, BlockPos pos) {
         TileEntity tile = world.getTileEntity(pos);
-        if (tile instanceof TileJar){
-            int ess = ((TileJar) tile).ae.amount;
+        if (tile instanceof JarTile){
+            int ess = ((JarTile) tile).ae.amount;
             if (ess > 0){
                 float r = ess / 250.0f;
                 return MathHelper.floor(r * 14.0f) + 1;

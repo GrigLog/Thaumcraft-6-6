@@ -37,7 +37,7 @@ public class AuraWorld {
                 }
             }
         }
-        Thaumcraft.LOGGER.info(world.getDimensionKey().getLocation() + " loaded " + loaded + " processed " + processed + " cached " + cache.size());
+        //Thaumcraft.LOGGER.info(world.getDimensionKey().getLocation() + " loaded " + loaded + " processed " + processed + " cached " + cache.size());
     }
 
     void processChunk(ChunkPos pos, AuraChunk chunk){

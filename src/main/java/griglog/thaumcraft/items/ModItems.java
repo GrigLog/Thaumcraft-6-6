@@ -5,8 +5,12 @@ import griglog.thaumcraft.items.misc.Phial;
 import griglog.thaumcraft.items.tools.elemental.*;
 import griglog.thaumcraft.items.tools.thaumium.*;
 import griglog.thaumcraft.items.tools.void_.*;
+import net.minecraft.block.Block;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
+
+import static griglog.thaumcraft.blocks.ModBlocks.*;
+import static griglog.thaumcraft.blocks.ModBlocks.crucible;
 
 public class ModItems {
     public static final Item thaumiumSword = new ThaumiumSword();
@@ -79,6 +83,8 @@ public class ModItems {
 
     public static final Item phialFull = new Phial(true);
     public static final Item phialEmpty = new Phial(false);
+
+    public static final Block[] blockItems =  new Block[]{silverLog, silverLeaves, silverSapling, greatLeaves, greatLog, greatSapling, jar, crucible};
 
     public static Item defaultItem(String id){
         return new Item(ModTab.props()).setRegistryName(id);

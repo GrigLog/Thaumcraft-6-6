@@ -1,8 +1,8 @@
 {
     "textures": {
-        "particle": "thaumcraft:blocks/taint_growth_5",
-        "side1": "thaumcraft:blocks/taint_growth_5",
-        "side2": "thaumcraft:blocks/taint_growth_3"
+        "particle": "thaumcraft:block/taint_growth_5",
+        "side1": "thaumcraft:block/taint_growth_5",
+        "side2": "thaumcraft:block/taint_growth_3"
     },
     "elements": [
         {

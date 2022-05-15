@@ -1,8 +1,8 @@
 {
     "textures": {
-        "particle": "thaumcraft:blocks/arcane_ear_on",
-        "side": "thaumcraft:blocks/arcane_ear_on",
-        "top": "thaumcraft:blocks/base_wood"
+        "particle": "thaumcraft:block/arcane_ear_on",
+        "side": "thaumcraft:block/arcane_ear_on",
+        "top": "thaumcraft:block/base_wood"
     },
     "elements": [
         {

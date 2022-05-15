@@ -1,9 +1,9 @@
 {
     "textures": {
-        "particle": "thaumcraft:blocks/table_wood_top",
-        "top": "thaumcraft:blocks/table_wood_top",
-        "side": "thaumcraft:blocks/table_wood_side",
-        "bottom": "thaumcraft:blocks/base_wood_grain"
+        "particle": "thaumcraft:block/table_wood_top",
+        "top": "thaumcraft:block/table_wood_top",
+        "side": "thaumcraft:block/table_wood_side",
+        "bottom": "thaumcraft:block/base_wood_grain"
     },
     "elements": [
         {
