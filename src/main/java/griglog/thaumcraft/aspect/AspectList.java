@@ -134,6 +134,14 @@ public class AspectList implements Serializable {
         return this;
     }
 
+    public boolean has(AspectList list){
+        for (AspectEntry ae : list.aspects){
+            if (getAmount(ae.type) < ae.amount)
+                return false;
+        }
+        return true;
+    }
+
     /**
      * Adds this aspect and amount to the collection.
      * If the aspect exists then only the highest of the old or new amount will be used.

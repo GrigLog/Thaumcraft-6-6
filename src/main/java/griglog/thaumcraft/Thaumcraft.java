@@ -5,6 +5,7 @@ import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.blocks.tiles.Crucible;
 import griglog.thaumcraft.blocks.tiles.CrucibleTile;
 import griglog.thaumcraft.blocks.tiles.JarTile;
+import griglog.thaumcraft.client.CrucibleRenderer;
 import griglog.thaumcraft.client.JarRenderer;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.misc.Phial;
@@ -91,6 +92,8 @@ public class Thaumcraft {
         RenderTypeLookup.setRenderLayer(ModBlocks.jar, RenderType.getTranslucent());
         //RenderTypeLookup.setRenderLayer(ModBlocks.greatLeaves, RenderType.getCutoutMipped());
         ClientRegistry.bindTileEntityRenderer(JarTile.type, JarRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(CrucibleTile.type, CrucibleRenderer::new);
+
 
         event.enqueueWork(() ->
         ItemModelsProperties.registerProperty(ModBlocks.jar.asItem(), new ResourceLocation(Thaumcraft.id, "fill"),

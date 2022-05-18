@@ -12,8 +12,13 @@ import griglog.thaumcraft.utils.Utils;
 import griglog.thaumcraft.world.ModFeatures;
 import griglog.thaumcraft.world.MagicalForestBiome;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.AtlasTexture;
+import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
@@ -25,7 +30,9 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import static griglog.thaumcraft.blocks.ModBlocks.*;
 
@@ -70,6 +77,11 @@ public class Register {
     static void regSounds(RegistryEvent.Register<SoundEvent> event){
         Utils.<SoundEvent>getFields(SoundsTC.class, SoundEvent.class, null)
             .forEach((sound) -> event.getRegistry().register(sound));
+    }
+
+    @SubscribeEvent
+    static void setupClient(FMLClientSetupEvent event){
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.crucibleItem, (manager) -> new ItemRenderer(manager, Minecraft.getInstance().getItemRenderer()));
     }
 
     @SubscribeEvent

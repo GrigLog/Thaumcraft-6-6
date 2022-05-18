@@ -52,9 +52,9 @@ public class Crucible extends CauldronBlock {
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!worldIn.isRemote) {
-            TileEntity tile = worldIn.getTileEntity(pos);
-            if (tile instanceof CrucibleTile) {
-                ((CrucibleTile) tile).clear(true);
+            CrucibleTile tile = (CrucibleTile) worldIn.getTileEntity(pos);
+            if (tile != null) {
+                tile.clear();
             }
         }
         super.onBlockHarvested(worldIn, pos, state, player);
@@ -64,14 +64,14 @@ public class Crucible extends CauldronBlock {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isRemote) {
             CrucibleTile tile = (CrucibleTile) world.getTileEntity(pos);
-            if (tile != null && entity instanceof ItemEntity && !(entity instanceof CrucibleItem) && state.get(LEVEL) > 0) {
+            if (tile != null && entity instanceof ItemEntity && !(entity instanceof CrucibleItem)) {
                 tile.attemptSmelt((ItemEntity) entity);
             } else {
                 if (++delay < 10) {
                     return;
                 }
                 delay = 0;
-                if (entity instanceof LivingEntity && tile != null && tile.heat > 150 && state.get(LEVEL) > 0) {
+                if (entity instanceof LivingEntity && tile != null && tile.heat > 150 && tile.water > 0) {
                     entity.attackEntityFrom(DamageSource.IN_FIRE, 1.0f);
                     world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundEvents.BLOCK_LAVA_EXTINGUISH, SoundCategory.BLOCKS, 0.4f, 2.0f + world.rand.nextFloat() * 0.4f);
                 }
@@ -84,73 +84,35 @@ public class Crucible extends CauldronBlock {
         ItemStack is = player.getHeldItem(handIn);
         if (is.isEmpty() && player.isSneaking()){
             if (!worldIn.isRemote) {
-                TileEntity tile = worldIn.getTileEntity(pos);
-                if (tile instanceof CrucibleTile) {
-                    ((CrucibleTile) tile).clear(false);
-                    setWaterLevel(worldIn, pos, state, 0);
+                CrucibleTile tile = (CrucibleTile) worldIn.getTileEntity(pos);
+                if (tile != null) {
+                    tile.clear();
                 }
             }
             return ActionResultType.CONSUME;
         }
-        int i = state.get(LEVEL);
+        CrucibleTile tile = (CrucibleTile) worldIn.getTileEntity(pos);
+        if (tile == null){
+            return ActionResultType.PASS;
+        }
         Item item = is.getItem();
         if (item == Items.WATER_BUCKET) {
-            if (i < 3) {
+            if (tile.water < 1000) {
                 if (!player.abilities.isCreativeMode) {
                     player.setHeldItem(handIn, new ItemStack(Items.BUCKET));
                 }
                 player.addStat(Stats.FILL_CAULDRON);
-                setWaterLevel(worldIn, pos, state, 1);
+                tile.water = 1000;
+                tile.syncClient();
                 worldIn.playSound(null, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
             return ActionResultType.func_233537_a_(worldIn.isRemote);
         }
-        if (i > 0 && item instanceof IDyeableArmorItem) {
-            IDyeableArmorItem idyeablearmoritem = (IDyeableArmorItem)item;
-            if (idyeablearmoritem.hasColor(is)) {
-                idyeablearmoritem.removeColor(is);
-                setWaterLevel(worldIn, pos, state, i - 1);
-                player.addStat(Stats.CLEAN_ARMOR);
-                return ActionResultType.SUCCESS;
-            }
-            return ActionResultType.FAIL;
-        }
-        if (i > 0 && item instanceof BannerItem) {
-            if (BannerTileEntity.getPatterns(is) > 0) {
-                ItemStack itemstack2 = is.copy();
-                itemstack2.setCount(1);
-                BannerTileEntity.removeBannerData(itemstack2);
-                player.addStat(Stats.CLEAN_BANNER);
-                if (!player.abilities.isCreativeMode) {
-                    is.shrink(1);
-                    setWaterLevel(worldIn, pos, state, i - 1);
-                }
-
-                if (is.isEmpty()) {
-                    player.setHeldItem(handIn, itemstack2);
-                } else if (!player.inventory.addItemStackToInventory(itemstack2)) {
-                    player.dropItem(itemstack2, false);
-                } else if (player instanceof ServerPlayerEntity) {
-                    ((ServerPlayerEntity)player).sendContainerToPlayer(player.container);
-                }
-            }
-
-            return ActionResultType.func_233537_a_(worldIn.isRemote);
-        }
-        if (i > 0 && item instanceof BlockItem) {
-            Block block = ((BlockItem)item).getBlock();
-            if (block instanceof ShulkerBoxBlock && !worldIn.isRemote()) {
-                ItemStack itemstack1 = new ItemStack(Blocks.SHULKER_BOX, 1);
-                if (is.hasTag()) {
-                    itemstack1.setTag(is.getTag().copy());
-                }
-
-                player.setHeldItem(handIn, itemstack1);
-                setWaterLevel(worldIn, pos, state, i - 1);
-                player.addStat(Stats.CLEAN_SHULKER_BOX);
-                return ActionResultType.SUCCESS;
-            }
-        }
         return ActionResultType.PASS;
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 }

@@ -5,8 +5,10 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.network.NetworkHooks;
 
 public class CrucibleItem extends ItemEntity {
     public static EntityType<CrucibleItem> type =
@@ -47,4 +49,8 @@ public class CrucibleItem extends ItemEntity {
         return !source.isExplosion() && super.attackEntityFrom(source, damage);
     }
 
+    @Override
+    public IPacket<?> createSpawnPacket() {
+        return NetworkHooks.getEntitySpawningPacket(this);
+    }
 }
