@@ -80,6 +80,7 @@ public class ModItems {
     public static final Item voidRobeHelm = new VoidRobeArmor(EquipmentSlotType.HEAD);
     public static final Item voidRobeChest = new VoidRobeArmor(EquipmentSlotType.CHEST);
     public static final Item voidRobeLegs = new VoidRobeArmor(EquipmentSlotType.LEGS);
+    public static final Item goggles = new Goggles();
 
     public static final Item phialFull = new Phial(true);
     public static final Item phialEmpty = new Phial(false);

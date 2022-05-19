@@ -1,5 +1,7 @@
 package griglog.thaumcraft;
 
+import griglog.thaumcraft.aspect.Aspect;
+import griglog.thaumcraft.aspect.Aspects;
 import griglog.thaumcraft.aura.Aura;
 import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.blocks.tiles.JarTile;
@@ -21,6 +23,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
@@ -88,6 +91,10 @@ public class Register {
     static void addTextures(TextureStitchEvent.Pre event){
         if (event.getMap().getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)){
             event.addSprite(JarRenderer.EMPTY_TEXTURE);
+            for (Aspect a : Aspects.aspects.values()){
+                if (a != Aspects.EMPTY)
+                    event.addSprite(new ResourceLocation(Thaumcraft.id, "aspects/" + a.tag));
+            }
         }
     }
 

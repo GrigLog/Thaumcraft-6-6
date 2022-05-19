@@ -1,4 +1,8 @@
-package griglog.thaumcraft.aspect;
+package griglog.thaumcraft.api.aspect;
+
+import griglog.thaumcraft.aspect.Aspect;
+import griglog.thaumcraft.aspect.AspectList;
+import griglog.thaumcraft.aspect.Aspects;
 
 public interface ISingleAspectContainer extends IAspectContainer{
     Aspect getAspect();

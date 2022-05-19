@@ -1,4 +1,7 @@
-package griglog.thaumcraft.aspect;
+package griglog.thaumcraft.api.aspect;
+
+import griglog.thaumcraft.aspect.Aspect;
+import griglog.thaumcraft.aspect.AspectList;
 
 /**
  * @author azanor
@@ -6,8 +9,7 @@ package griglog.thaumcraft.aspect;
  * Used by blocks like the crucible and alembic to hold their aspects.
  * Tiles extending this interface will have their aspects show up when viewed by goggles of revealing
  */
-public interface IAspectContainer {
-    AspectList readList();
+public interface IAspectContainer extends IAspectHolder{
     /**
      * This method is used to add a certain amount of an aspect to the tile entity.
      * @param tag

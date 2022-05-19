@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.*;
 
 public class AspectList implements Serializable {
-    public LinkedList<AspectEntry> aspects = new LinkedList<>();
+    public ArrayList<AspectEntry> aspects = new ArrayList<>();
 
     public AspectList(CompoundNBT tag) {
         this.read(tag);

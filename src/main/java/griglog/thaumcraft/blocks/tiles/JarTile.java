@@ -3,7 +3,7 @@ package griglog.thaumcraft.blocks.tiles;
 import griglog.thaumcraft.aspect.Aspect;
 import griglog.thaumcraft.aspect.AspectEntry;
 import griglog.thaumcraft.aspect.Aspects;
-import griglog.thaumcraft.aspect.ISingleAspectContainer;
+import griglog.thaumcraft.api.aspect.ISingleAspectContainer;
 import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.utils.TileWrapper;
 import net.minecraft.block.BlockState;

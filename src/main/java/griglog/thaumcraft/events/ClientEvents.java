@@ -1,18 +1,38 @@
 package griglog.thaumcraft.events;
 
-import griglog.thaumcraft.client.JarRenderer;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import griglog.thaumcraft.api.IGoggles;
+import griglog.thaumcraft.api.aspect.IAspectContainer;
+import griglog.thaumcraft.api.aspect.IAspectHolder;
+import griglog.thaumcraft.client.RenderHelper;
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
 import griglog.thaumcraft.api.IRechargable;
 import griglog.thaumcraft.api.IVisDiscountGear;
 import griglog.thaumcraft.api.IWarpingGear;
 import griglog.thaumcraft.utils.RechargeHelper;
+import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.vector.Matrix4f;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.LightType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.event.DrawHighlightEvent;
+import net.minecraftforge.client.model.data.EmptyModelData;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -63,8 +83,20 @@ public class ClientEvents {
     }
 
     @SubscribeEvent
-    static void models(ModelRegistryEvent event){
-        JarRenderer.saveModelQuads();
+    static void draw(DrawHighlightEvent.HighlightBlock event){
+        ClientWorld world = Minecraft.getInstance().world;
+        if (world == null)
+            return;
+        Entity e = event.getInfo().getRenderViewEntity();
+        if (!(e instanceof PlayerEntity))
+            return;
+        PlayerEntity player = (PlayerEntity) e;
+        if (!(player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof IGoggles))
+            return;
+        BlockPos pos = event.getTarget().getPos();
+        TileEntity tile = world.getTileEntity(pos);
+        if (tile instanceof IAspectHolder)
+            RenderHelper.drawAspects(event, world, pos, ((IAspectHolder) tile).readList());
     }
 
     public static int getRunicCharge(ItemStack stack) {

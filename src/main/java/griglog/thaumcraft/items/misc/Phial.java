@@ -1,5 +1,6 @@
 package griglog.thaumcraft.items.misc;
 
+import griglog.thaumcraft.api.aspect.IAspectContainer;
 import griglog.thaumcraft.aspect.*;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.ModTab;

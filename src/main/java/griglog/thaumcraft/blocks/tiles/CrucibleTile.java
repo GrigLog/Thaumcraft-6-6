@@ -3,6 +3,7 @@ package griglog.thaumcraft.blocks.tiles;
 import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.api.CrucibleRecipe;
+import griglog.thaumcraft.api.aspect.IAspectHolder;
 import griglog.thaumcraft.aspect.Aspect;
 import griglog.thaumcraft.aspect.AspectEntry;
 import griglog.thaumcraft.aspect.AspectList;
@@ -36,7 +37,7 @@ import net.minecraftforge.common.util.Constants;
 import java.util.Set;
 import java.util.UUID;
 
-public class CrucibleTile extends TileEntity implements ITickableTileEntity {
+public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAspectHolder {
     public static final TileEntityType<CrucibleTile> type = TileWrapper.wrap(CrucibleTile::new, ModBlocks.crucible);
     public CrucibleTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
@@ -117,7 +118,7 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity {
         } else if (water > 0) {
             drawEffects();
         }
-        Thaumcraft.LOGGER.info((world.isRemote ? "client " : "server ") + heat + " heat " + aspects.visSize() + " vis " + water + " water");
+        //Thaumcraft.LOGGER.info((world.isRemote ? "client " : "server ") + heat + " heat " + aspects.visSize() + " vis " + water + " water");
     }
 
     void drawEffects(){
@@ -125,7 +126,7 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity {
     }
 
     public void spillRandom() {
-        Thaumcraft.LOGGER.info("spill " + (world.isRemote ? "client" : "server"));
+        //Thaumcraft.LOGGER.info("spill " + (world.isRemote ? "client" : "server"));
         if (aspects.size() > 0) {
             Aspect tag = aspects.getAspects()[world.rand.nextInt(aspects.getAspects().length)];
             aspects.reduce(tag, 1);
@@ -168,7 +169,7 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity {
     }
 
     public ItemStack attemptSmelt(ItemStack is, PlayerEntity player) {
-        AspectEntry ae = getAspects(is);
+        AspectList ae = getAspects(is);
         CrucibleRecipe cr = checkRecipe(is, aspects);
         if (cr != null){
             ItemStack res = cr.getRecipeOutput();
@@ -211,8 +212,9 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity {
         } while (items.getCount() > 0);
     }
 
-    public static AspectEntry getAspects(ItemStack is){
-        return new AspectEntry(Aspects.AIR, 10 * is.getCount());
+    public static AspectList getAspects(ItemStack is){
+        return new AspectList().add(new AspectEntry(Aspects.AIR, 10 * is.getCount()))
+                               .add(new AspectEntry(Aspects.EARTH, 5 * is.getCount()));
     }
 
     public static CrucibleRecipe checkRecipe(ItemStack is, AspectList aspects){
@@ -227,4 +229,9 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity {
     static Set<CrucibleRecipe> recipes = ImmutableSet.of(
         new CrucibleRecipe(new ItemStack(Items.GOLD_INGOT), Ingredient.fromItems(Items.IRON_INGOT), new AspectList().add(Aspects.AIR, 50))
     );
+
+    @Override
+    public AspectList readList() {
+        return aspects;
+    }
 }

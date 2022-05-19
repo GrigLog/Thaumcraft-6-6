@@ -1,4 +1,4 @@
-package griglog.thaumcraft.aspect;
+package griglog.thaumcraft.api.aspect;
 
 /**
  * @author Azanor

@@ -22,7 +22,7 @@ public class PlayerEvents {
     static void tick(TickEvent.PlayerTickEvent event){
         if (event.phase == TickEvent.Phase.END && !event.player.world.isRemote && event.player.ticksExisted % 20 == 0){
             AuraChunk ac = AuraHandler.getAura((ServerWorld) event.player.world, event.player.getPosition());
-            Thaumcraft.LOGGER.info(ac.vis);
+            //Thaumcraft.LOGGER.info(ac.vis);
         }
     }
 }

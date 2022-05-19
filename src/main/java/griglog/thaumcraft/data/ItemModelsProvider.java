@@ -33,7 +33,7 @@ public class ItemModelsProvider extends ItemModelProvider {
     public static Set<Item> usual = ImmutableSet.of(thaumiumIngot, brassIngot, voidIngot, quicksilver,
         ironCluster, goldCluster, copperCluster, tinCluster, silverCluster, leadCluster, cinnabarCluster, quartzCluster,
         quicksilverNugget, voidNugget, thaumiumNugget, brassNugget, quartzNugget, rareEarth, fabric,
-        travellerBoots, thaumiumHelmet, thaumiumChestplate, thaumiumLeggings, thaumiumBoots, voidHelmet, voidChestplate, voidLeggings, voidBoots, cultHelm, cultChest, cultLegs, cultBoots, cultRobeHelm, cultRobeChest, cultRobeLegs, fortressHelm, fortressChest, fortressLegs);
+        goggles, travellerBoots, thaumiumHelmet, thaumiumChestplate, thaumiumLeggings, thaumiumBoots, voidHelmet, voidChestplate, voidLeggings, voidBoots, cultHelm, cultChest, cultLegs, cultBoots, cultRobeHelm, cultRobeChest, cultRobeLegs, fortressHelm, fortressChest, fortressLegs);
     @Override
     protected void registerModels() {
         for (Item item : usual){

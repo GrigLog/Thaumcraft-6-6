@@ -2,11 +2,9 @@ package griglog.thaumcraft.client;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.aspect.Aspects;
 import griglog.thaumcraft.blocks.tiles.CrucibleTile;
 import griglog.thaumcraft.utils.Utils;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
@@ -34,14 +32,17 @@ public class CrucibleRenderer extends TileEntityRenderer<CrucibleTile> {
         //TextureAtlasSprite sprite = Minecraft.getInstance().getBlockRendererDispatcher().getBlockModelShapes().getTexture(Blocks.WATER.getDefaultState());
         TextureAtlasSprite sprite = Minecraft.getInstance().getAtlasSpriteGetter(AtlasTexture.LOCATION_BLOCKS_TEXTURE).apply(new ResourceLocation("block/water_still"));
         int base = BiomeColors.getWaterColor(tile.getWorld(), tile.getPos());
-        float t = Math.min(tile.aspects.visSize() / 500f, 1);
-        int col = Utils.scaleColor(base, Aspects.FLUX.color, t);
+        float visFill = tile.aspects.visSize() / 500f;
+        float lowest = 4/16f;
+        float highest = 15/16f;
+        float waterFill = tile.water / 1000f;
+        float y = visFill > 1 ? highest + 0.99f/16f : lowest + (highest - lowest) * waterFill;
+        if (visFill > 1)
+            visFill = 1;
+        int col = Utils.scaleColor(base, Aspects.FLUX.color, visFill);
         int r = ColorHelper.PackedColor.getRed(col);
         int g = ColorHelper.PackedColor.getGreen(col);
         int b = ColorHelper.PackedColor.getBlue(col);
-        float lowest = 4/16f;
-        float highest = 15/16f;
-        float y = lowest + (highest - lowest) * tile.water / 1000f;
         RenderHelper.drawTop(builder, ms.getLast().getMatrix(), 0, 1, y, 0, 1, 255, r, g, b, sprite);
         ms.pop();
     }
