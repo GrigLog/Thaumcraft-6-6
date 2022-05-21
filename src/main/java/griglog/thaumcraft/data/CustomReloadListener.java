@@ -132,8 +132,6 @@ public class CustomReloadListener extends ReloadListener<Void> {
     }
 
     private AspectList genFromCraftsRecursive(Item item, RecipeManager recipes){
-        if (item == Items.GOLD_NUGGET)
-            Thaumcraft.LOGGER.info("breakpoint");
         generating.add(item);
         AspectList res = ItemAspects.items.getOrDefault(item, null);
         if (res != null) {

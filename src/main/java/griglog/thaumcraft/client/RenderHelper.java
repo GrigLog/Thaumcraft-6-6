@@ -9,7 +9,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.*;
@@ -84,7 +83,7 @@ public class RenderHelper {
         IVertexBuilder transBuilder = event.getBuffers().getBuffer(RenderType.getTranslucent());
         for (int i = 0; i < len; i++) {
             float corner = 50 * (i - len/2f);
-            AspectEntry ae = aspects.aspects.get(i);
+            AspectEntry ae = aspects.entries.get(i);
             TextureAtlasSprite sprite = Minecraft.getInstance().getAtlasSpriteGetter(AtlasTexture.LOCATION_BLOCKS_TEXTURE).apply(new ResourceLocation(Thaumcraft.id, "aspects/" + ae.type.tag));
             drawSideZNeg(transBuilder, mPos, corner + 5, corner + 45, -45, -5, 0, 0xc0, ae.type.color, sprite);
             String str = String.valueOf(ae.amount);

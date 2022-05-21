@@ -8,6 +8,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.JsonOps;
 import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
+import griglog.thaumcraft.utils.ItemUtils;
 import net.minecraft.advancements.criterion.ItemPredicate;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.ItemStackHelper;
@@ -85,7 +86,7 @@ public class RefiningModifier extends LootModifier {
 
     public static class Serializer extends GlobalLootModifierSerializer<RefiningModifier> {
         public Serializer() {
-            setRegistryName(Thaumcraft.id, "refining_serializer");
+            setRegistryName(Thaumcraft.id, "refining");
         }
 
         @Override
@@ -98,7 +99,7 @@ public class RefiningModifier extends LootModifier {
                 try {
                     drops.add(new Entry(
                         Ingredient.deserialize(e.get("ingredient")),
-                        ItemStack.CODEC.parse(JsonOps.INSTANCE, e.get("result")).getOrThrow(false, (s) -> Thaumcraft.LOGGER.error(e)),
+                        ItemUtils.deserialize(e.get("result")),
                         e.get("chance").getAsFloat()));
                 } catch (Exception error){
                     Thaumcraft.LOGGER.error("Unable to parse entry " + e.toString());
@@ -116,7 +117,7 @@ public class RefiningModifier extends LootModifier {
             for (Entry e : m.drops){
                 JsonObject obj = new JsonObject();
                 obj.add("ingredient", e.ing.serialize());
-                obj.add("result", ItemStack.CODEC.encodeStart(JsonOps.INSTANCE, e.res).getOrThrow(false, (s) -> Thaumcraft.LOGGER.error(e)));
+                obj.add("result", ItemUtils.serialize(e.res));
                 obj.add("chance", new JsonPrimitive(e.chance));
                 drops.add(obj);
             }

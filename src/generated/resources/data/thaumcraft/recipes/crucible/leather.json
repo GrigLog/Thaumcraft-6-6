@@ -1,0 +1,10 @@
+{
+  "type": "thaumcraft:crucible",
+  "catalyst": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "result": {
+    "id": "minecraft:leather"
+  },
+  "aspects": "3 aer 3 bestia"
+}

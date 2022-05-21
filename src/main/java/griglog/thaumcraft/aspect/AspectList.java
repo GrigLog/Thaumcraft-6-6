@@ -8,7 +8,7 @@ import java.util.*;
 
 public class AspectList implements Serializable {
     public static AspectList EMPTY = new AspectList();
-    public ArrayList<AspectEntry> aspects = new ArrayList<>();
+    public ArrayList<AspectEntry> entries = new ArrayList<>();
 
     public AspectList(CompoundNBT tag) {
         this.read(tag);
@@ -16,16 +16,23 @@ public class AspectList implements Serializable {
 
     public AspectList(){}
 
+    public AspectList(String s){
+        String[] parts = s.split(" ");
+        for (int i = 0; i < parts.length; i += 2){
+            add(Aspects.get(parts[i+1]), Integer.parseInt(parts[i]));
+        }
+    }
+
 
     public AspectList copy() {
         AspectList out = new AspectList();
-        for (Aspect a : getAspects())
+        for (Aspect a : getEntries())
             out.add(a, getAmount(a));
         return out;
     }
 
     public AspectList multiply(float count){
-        for (AspectEntry ae : aspects){
+        for (AspectEntry ae : entries){
             ae.amount = (int) Math.ceil(ae.amount * count);
         }
         return this;
@@ -35,11 +42,11 @@ public class AspectList implements Serializable {
      * @return the amount of different aspects in this collection
      */
     public int size() {
-        return aspects.size();
+        return entries.size();
     }
 
     public boolean empty(){
-        return aspects.size() > 0;
+        return entries.size() > 0;
     }
 
     /**
@@ -47,7 +54,7 @@ public class AspectList implements Serializable {
      */
     public int visSize() {
         int q = 0;
-        for (AspectEntry as : aspects) {
+        for (AspectEntry as : entries) {
             q += as.amount;
         }
         return q;
@@ -56,22 +63,22 @@ public class AspectList implements Serializable {
     /**
      * @return an array of all the aspects in this collection
      */
-    public Aspect[] getAspects() {
-        return aspects.stream().map(a -> a.type).toArray(Aspect[]::new);
+    public Aspect[] getEntries() {
+        return entries.stream().map(a -> a.type).toArray(Aspect[]::new);
     }
 
     /**
      * @return an array of all the aspects in this collection sorted by name
      */
     public Aspect[] getAspectsSortedByName() {
-        return aspects.stream().map(as -> as.type).sorted(Comparator.comparing(a -> a.tag)).toArray(Aspect[]::new);
+        return entries.stream().map(as -> as.type).sorted(Comparator.comparing(a -> a.tag)).toArray(Aspect[]::new);
     }
 
     /**
      * @return an array of all the aspects in this collection sorted by amount
      */
     public Aspect[] getAspectsSortedByAmount() {
-        return aspects.stream().sorted(Comparator.comparingInt(a -> -a.amount)).map(a -> a.type).toArray(Aspect[]::new);
+        return entries.stream().sorted(Comparator.comparingInt(a -> -a.amount)).map(a -> a.type).toArray(Aspect[]::new);
     }
 
     /**
@@ -79,7 +86,7 @@ public class AspectList implements Serializable {
      * @return the amount associated with the given aspect in this collection
      */
     public int getAmount(Aspect key) {
-        for (AspectEntry a : aspects){
+        for (AspectEntry a : entries){
             if (a.type == key)
                 return a.amount;
         }
@@ -93,10 +100,10 @@ public class AspectList implements Serializable {
      * @return if successful
      */
     public boolean reduce(Aspect key, int amount) {
-        for (AspectEntry a : aspects){
+        for (AspectEntry a : entries){
             if (a.type == key) {
                 if (a.amount == amount){
-                    aspects.remove(a);
+                    entries.remove(a);
                     return true;
                 } else if (a.amount >= amount){
                     a.amount -= amount;
@@ -114,7 +121,7 @@ public class AspectList implements Serializable {
      * @return
      */
     public AspectList remove(Aspect key) {
-        for (Iterator<AspectEntry> it = aspects.iterator(); it.hasNext();){
+        for (Iterator<AspectEntry> it = entries.iterator(); it.hasNext();){
             AspectEntry ae = it.next();
             if (ae.type == key){
                 it.remove();
@@ -132,18 +139,18 @@ public class AspectList implements Serializable {
      * @return
      */
     public AspectList add(Aspect aspect, int amount) {
-        for (AspectEntry ae : aspects){
+        for (AspectEntry ae : entries){
             if (ae.type == aspect){
                 ae.amount += amount;
                 return this;
             }
         }
-        aspects.add(new AspectEntry(aspect, amount));
+        entries.add(new AspectEntry(aspect, amount));
         return this;
     }
 
     public boolean has(AspectList list){
-        for (AspectEntry ae : list.aspects){
+        for (AspectEntry ae : list.entries){
             if (getAmount(ae.type) < ae.amount)
                 return false;
         }
@@ -158,14 +165,14 @@ public class AspectList implements Serializable {
      * @return
      */
     public AspectList merge(Aspect aspect, int amount) {
-        for (AspectEntry ae : aspects){
+        for (AspectEntry ae : entries){
             if (ae.type == aspect){
                 if (amount > ae.amount)
                     ae.amount = amount;
                 return this;
             }
         }
-        aspects.add(new AspectEntry(aspect, amount));
+        entries.add(new AspectEntry(aspect, amount));
         return this;
     }
 
@@ -174,19 +181,19 @@ public class AspectList implements Serializable {
     }
 
     public AspectList add(AspectList in) {
-        for (Aspect a : in.getAspects())
+        for (Aspect a : in.getEntries())
             add(a, in.getAmount(a));
         return this;
     }
 
     public AspectList reduce(AspectList in) {
-        for (Aspect a : in.getAspects())
+        for (Aspect a : in.getEntries())
             reduce(a, in.getAmount(a));
         return this;
     }
 
     public AspectList merge(AspectList in) {
-        for (Aspect a : in.getAspects())
+        for (Aspect a : in.getEntries())
             merge(a, in.getAmount(a));
         return this;
     }
@@ -201,10 +208,10 @@ public class AspectList implements Serializable {
     }
 
     public void read(CompoundNBT tag, String label) {
-        aspects.clear();
+        entries.clear();
         ListNBT tlist = tag.getList(label, (byte) 10);
         for (int j = 0; j < tlist.size(); j++) {
-            aspects.add(new AspectEntry(tlist.getCompound(j)));
+            entries.add(new AspectEntry(tlist.getCompound(j)));
         }
     }
 
@@ -220,7 +227,7 @@ public class AspectList implements Serializable {
     public void write(CompoundNBT tag, String label) {
         ListNBT tlist = new ListNBT();
         tag.put(label, tlist);
-        for (AspectEntry ae : aspects){
+        for (AspectEntry ae : entries){
             tlist.add(ae.getTag());
         }
     }
@@ -230,7 +237,7 @@ public class AspectList implements Serializable {
         if (size() == 0)
             return "";
         StringBuilder sb = new StringBuilder();
-        for (AspectEntry ae : aspects){
+        for (AspectEntry ae : entries){
             sb.append(ae.amount).append(' ').append(ae.type.tag).append(' ');
         }
         sb.deleteCharAt(sb.length() - 1);

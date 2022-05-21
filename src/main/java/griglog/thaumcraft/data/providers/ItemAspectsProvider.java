@@ -20,11 +20,13 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 
 import static griglog.thaumcraft.aspect.Aspects.*;
 
+
 public class ItemAspectsProvider implements IDataProvider {
-    //static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().create();
     DataGenerator gen;
     StringBuilder sb;
     String PATH = "data/" + Thaumcraft.id + "/aspects/";
@@ -35,24 +37,36 @@ public class ItemAspectsProvider implements IDataProvider {
     @Override
     public void act(DirectoryCache cache) throws IOException {
         Path basePath = gen.getOutputFolder();
-        Path path = basePath.resolve(PATH + CustomReloadListener.ITEM);
-        Files.createDirectories(path.getParent());
 
+        Path path = basePath.resolve(PATH + CustomReloadListener.ITEM);
         sb = new StringBuilder();
         addItemAspects();
-        Files.write(path, sb.toString().getBytes(StandardCharsets.UTF_8));
+        writeIfNecessary(cache, path);
 
         path = basePath.resolve(PATH + CustomReloadListener.ITEM_TAG);
         sb = new StringBuilder();
         addItemTagAspects();
-        Files.write(path, sb.toString().getBytes(StandardCharsets.UTF_8));
+        writeIfNecessary(cache, path);
 
         path = basePath.resolve(PATH + CustomReloadListener.BLOCK_TAG);
         sb = new StringBuilder();
         addBlockTagAspects();
-        Files.write(path, sb.toString().getBytes(StandardCharsets.UTF_8));
-
+        writeIfNecessary(cache, path);
     }
+
+    void writeIfNecessary(DirectoryCache cache, Path path) {
+        String hash = HASH_FUNCTION.hashUnencodedChars(sb.toString()).toString();
+        try {
+            if (!Files.exists(path) || !Objects.equals(cache.getPreviousHash(path), hash)) {
+                Files.createDirectories(path.getParent());
+                Files.write(path, sb.toString().getBytes(StandardCharsets.UTF_8));
+            }
+            cache.recordHash(path, hash);
+        } catch (IOException exc){
+            exc.printStackTrace();
+        }
+    }
+
 
     void put(IForgeRegistryEntry<?> registered, AspectList list){
         sb.append(registered.getRegistryName().toString()).append(' ');
@@ -92,11 +106,10 @@ public class ItemAspectsProvider implements IDataProvider {
     void addBlockAspects(){
         put(Blocks.NETHER_PORTAL, new AspectList().add(FIRE, 10).add(MOTION, 20).add(MAGIC, 10));
         put(Blocks.END_PORTAL, new AspectList().add(ELDRITCH, 10).add(MOTION, 20).add(MAGIC, 10));
-
     }
 
     void addItemAspects() {
-        //TODO: dyes, armor
+        //TODO: dyes, armor, tools...
         put(Items.BEDROCK, new AspectList().add(VOID, 25).add(ENTROPY, 25).add(EARTH, 25).add(DARKNESS, 25));
         put(Items.GRASS_BLOCK, new AspectList().add(EARTH, 5).add(PLANT, 1));
         put(Items.FARMLAND, new AspectList().add(EARTH, 5).add(WATER, 2).add(ORDER, 2));

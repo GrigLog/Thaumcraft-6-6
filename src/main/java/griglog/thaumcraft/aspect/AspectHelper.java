@@ -1,6 +1,5 @@
 package griglog.thaumcraft.aspect;
 
-import com.mojang.datafixers.util.Pair;
 import griglog.thaumcraft.utils.Utils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -43,7 +42,7 @@ public class AspectHelper {
         while (list.size() > cap) {
             Aspect lowest = null;
             float low = Short.MAX_VALUE;
-            for (Aspect tag : list.getAspects()) {
+            for (Aspect tag : list.getEntries()) {
                 float amount = list.getAmount(tag);
                 if (tag.isPrimal()) {
                     amount *= .9f;
@@ -93,7 +92,7 @@ public class AspectHelper {
             AspectList temp = new AspectList();
             temp.add(aspect, 1);
             AspectList temp2 = AspectHelper.reduceToPrimals(temp);
-            for (Aspect a : temp2.getAspects()) {
+            for (Aspect a : temp2.getEntries()) {
                 for (int b = 0; b < temp2.getAmount(a); b++) {
                     list.add(a);
                 }
@@ -104,7 +103,7 @@ public class AspectHelper {
 
     public static AspectList reduceToPrimals(AspectList in) {
         AspectList out = new AspectList();
-        for (Aspect aspect : in.getAspects()) {
+        for (Aspect aspect : in.getEntries()) {
             if (aspect != null) {
                 if (aspect.isPrimal()) {
                     out.add(aspect, in.getAmount(aspect));
@@ -113,7 +112,7 @@ public class AspectHelper {
                     temp.add(aspect.components[0], in.getAmount(aspect));
                     temp.add(aspect.components[1], in.getAmount(aspect));
                     AspectList temp2 = reduceToPrimals(temp);
-                    for (Aspect a : temp2.getAspects()) {
+                    for (Aspect a : temp2.getEntries()) {
                         out.add(a, temp2.getAmount(a));
                     }
                 }

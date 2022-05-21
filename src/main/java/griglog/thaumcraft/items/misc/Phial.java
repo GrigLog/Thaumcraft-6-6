@@ -69,7 +69,7 @@ public class Phial extends Item implements IAspectHolderItem {
 
     @Override
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-        if (isInGroup(group)){
+        if (full && isInGroup(group)){
             for (Aspect a : Aspects.aspects.values()){
                 if (a != Aspects.EMPTY)
                     items.add(makePhial(a));

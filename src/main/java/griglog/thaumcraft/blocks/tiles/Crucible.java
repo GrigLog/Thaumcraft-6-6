@@ -55,6 +55,7 @@ public class Crucible extends CauldronBlock {
             CrucibleTile tile = (CrucibleTile) worldIn.getTileEntity(pos);
             if (tile != null) {
                 tile.clear();
+                worldIn.removeTileEntity(pos);
             }
         }
         super.onBlockHarvested(worldIn, pos, state, player);
@@ -103,7 +104,7 @@ public class Crucible extends CauldronBlock {
                 }
                 player.addStat(Stats.FILL_CAULDRON);
                 tile.water = 1000;
-                tile.syncClient();
+                tile.saveAndSync();
                 worldIn.playSound(null, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
             return ActionResultType.func_233537_a_(worldIn.isRemote);

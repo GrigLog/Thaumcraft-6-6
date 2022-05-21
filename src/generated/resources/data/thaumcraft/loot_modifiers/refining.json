@@ -7,8 +7,7 @@
         "tag": "forge:ores/iron"
       },
       "result": {
-        "id": "thaumcraft:cluster_iron",
-        "Count": 1
+        "id": "thaumcraft:cluster_iron"
       },
       "chance": 1.0
     },
@@ -17,8 +16,7 @@
         "tag": "forge:ores/gold"
       },
       "result": {
-        "id": "thaumcraft:cluster_gold",
-        "Count": 1
+        "id": "thaumcraft:cluster_gold"
       },
       "chance": 1.0
     },
@@ -27,8 +25,7 @@
         "tag": "forge:ores/quartz"
       },
       "result": {
-        "id": "thaumcraft:cluster_quartz",
-        "Count": 1
+        "id": "thaumcraft:cluster_quartz"
       },
       "chance": 1.0
     },
@@ -37,8 +34,7 @@
         "tag": "forge:ores/copper"
       },
       "result": {
-        "id": "thaumcraft:cluster_copper",
-        "Count": 1
+        "id": "thaumcraft:cluster_copper"
       },
       "chance": 1.0
     },
@@ -47,8 +43,7 @@
         "tag": "forge:ores/tin"
       },
       "result": {
-        "id": "thaumcraft:cluster_tin",
-        "Count": 1
+        "id": "thaumcraft:cluster_tin"
       },
       "chance": 1.0
     },
@@ -57,8 +52,7 @@
         "tag": "forge:ores/silver"
       },
       "result": {
-        "id": "thaumcraft:cluster_silver",
-        "Count": 1
+        "id": "thaumcraft:cluster_silver"
       },
       "chance": 1.0
     },
@@ -67,11 +61,10 @@
         "tag": "forge:ores/lead"
       },
       "result": {
-        "id": "thaumcraft:cluster_lead",
-        "Count": 1
+        "id": "thaumcraft:cluster_lead"
       },
       "chance": 1.0
     }
   ],
-  "type": "thaumcraft:refining_serializer"
+  "type": "thaumcraft:refining"
 }

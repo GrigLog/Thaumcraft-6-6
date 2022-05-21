@@ -1,40 +1,30 @@
 package griglog.thaumcraft.blocks.tiles;
 
-import com.google.common.collect.ImmutableSet;
-import griglog.thaumcraft.Thaumcraft;
-import griglog.thaumcraft.api.CrucibleRecipe;
 import griglog.thaumcraft.api.aspect.IAspectHolder;
 import griglog.thaumcraft.aspect.*;
 import griglog.thaumcraft.blocks.ModBlocks;
-import griglog.thaumcraft.client.SoundsTC;
+import griglog.thaumcraft.data.CrucibleRecipe;
 import griglog.thaumcraft.entity.CrucibleItem;
 import griglog.thaumcraft.utils.AuraHelper;
 import griglog.thaumcraft.utils.TileWrapper;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CauldronBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.util.Constants;
 
-import java.util.Set;
 import java.util.UUID;
 
-public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAspectHolder {
+public class CrucibleTile extends DefaultTile implements ITickableTileEntity, IAspectHolder {
     public static final TileEntityType<CrucibleTile> type = TileWrapper.wrap(CrucibleTile::new, ModBlocks.crucible);
     public CrucibleTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
@@ -66,24 +56,6 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
     }
 
     @Override
-    public SUpdateTileEntityPacket getUpdatePacket(){
-        CompoundNBT tag = new CompoundNBT();
-        write(tag);
-        return new SUpdateTileEntityPacket(getPos(), -1, tag);
-    }
-
-    @Override
-    public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt){
-        CompoundNBT tag = pkt.getNbtCompound();
-        read(getBlockState(), tag);
-        //((ClientWorld)world).notifyBlockUpdate(pos, getBlockState(), getBlockState(), Constants.BlockFlags.BLOCK_UPDATE);
-    }
-
-    public void syncClient(){
-        world.notifyBlockUpdate(pos, getBlockState(), getBlockState(), Constants.BlockFlags.BLOCK_UPDATE);
-    }
-
-    @Override
     public void tick() {
         ++counter;
         int prevheat = heat;
@@ -93,16 +65,16 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
                 if (under.getMaterial() == Material.LAVA || under.getMaterial() == Material.FIRE || under.getBlock() == Blocks.MAGMA_BLOCK) {
                     if (heat < 200 && ++heat == 151) {
                         markDirty();
-                        syncClient();
+                        saveAndSync();
                     }
                 } else if (heat > 0 && --heat == 149) {
                     markDirty();
-                    syncClient();
+                    saveAndSync();
                 }
             } else {
                 if (heat > 0 && --heat == 149) {
                     markDirty();
-                    syncClient();
+                    saveAndSync();
                 }
             }
             if (aspects.visSize() > 500) {
@@ -125,12 +97,12 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
     public void spillRandom() {
         //Thaumcraft.LOGGER.info("spill " + (world.isRemote ? "client" : "server"));
         if (aspects.size() > 0) {
-            Aspect tag = aspects.getAspects()[world.rand.nextInt(aspects.getAspects().length)];
+            Aspect tag = aspects.getEntries()[world.rand.nextInt(aspects.getEntries().length)];
             aspects.reduce(tag, 1);
             AuraHelper.polluteAura(world, getPos(), (tag == Aspects.FLUX) ? 1.0f : 0.25f, true);
         }
         markDirty();
-        syncClient();
+        saveAndSync();
     }
 
     public void clear(){
@@ -145,7 +117,7 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
             aspects = new AspectList();
             water = 0;
             markDirty();
-            syncClient();
+            saveAndSync();
         }
     }
 
@@ -166,8 +138,7 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
     }
 
     public ItemStack attemptSmelt(ItemStack is, PlayerEntity player) {
-        AspectList ae = ItemAspects.getAspects(is);
-        CrucibleRecipe cr = checkRecipe(is, aspects);
+        CrucibleRecipe cr = CrucibleRecipe.check(player.getServer().getRecipeManager(), aspects, is);
         if (cr != null){
             ItemStack res = cr.getRecipeOutput();
             aspects.reduce(cr.aspects);
@@ -183,11 +154,12 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
                 water = 0;
             ejectItem(res);
         } else {
-            aspects.add(ae);
+            AspectList list = ItemAspects.getAspects(is);
+            aspects.add(list);
             is.setCount(0);
         }
         markDirty();
-        syncClient();
+        saveAndSync();
         return is;
     }
 
@@ -209,19 +181,6 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
         } while (items.getCount() > 0);
     }
 
-
-    public static CrucibleRecipe checkRecipe(ItemStack is, AspectList aspects){
-        for (CrucibleRecipe cr : recipes){
-            if (cr.matches(aspects, is)){
-                return cr;
-            }
-        }
-        return null;
-    }
-
-    static Set<CrucibleRecipe> recipes = ImmutableSet.of(
-        new CrucibleRecipe(new ItemStack(Items.GOLD_INGOT), Ingredient.fromItems(Items.IRON_INGOT), new AspectList().add(Aspects.AIR, 50))
-    );
 
     @Override
     public AspectList readList() {

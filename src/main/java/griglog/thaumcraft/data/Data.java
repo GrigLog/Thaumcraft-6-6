@@ -2,6 +2,7 @@ package griglog.thaumcraft.data;
 
 import griglog.thaumcraft.data.providers.*;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeBlockTagsProvider;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
@@ -24,9 +25,15 @@ public class Data {
         gen.addProvider(new BlockTagsProvider(gen, helper));
         gen.addProvider(new BlockDropsProvider(gen));
         gen.addProvider(new ItemAspectsProvider(gen));
+        gen.addProvider(new RecipesProvider(gen));
     }
     @SubscribeEvent
     static void regSerializers(RegistryEvent.Register<GlobalLootModifierSerializer<?>> event){
         event.getRegistry().register(new RefiningModifier.Serializer());
+    }
+
+    @SubscribeEvent
+    static void regSerializers2(RegistryEvent.Register<IRecipeSerializer<?>> event){
+        event.getRegistry().register(CrucibleRecipe.Serializer.instance);
     }
 }
