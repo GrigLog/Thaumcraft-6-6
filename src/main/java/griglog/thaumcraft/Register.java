@@ -7,6 +7,7 @@ import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.blocks.tiles.JarTile;
 import griglog.thaumcraft.client.JarRenderer;
 import griglog.thaumcraft.client.SoundsTC;
+import griglog.thaumcraft.data.CustomReloadListener;
 import griglog.thaumcraft.entity.ModEntities;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.utils.ItemUtils;
@@ -31,6 +32,7 @@ import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -96,13 +98,6 @@ public class Register {
                     event.addSprite(new ResourceLocation(Thaumcraft.id, "aspects/" + a.tag));
             }
         }
-    }
-
-    @SubscribeEvent
-    static void loadTextures(TextureStitchEvent.Post event){
-        /*if (event.getMap().getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)){
-            JarRenderer.sprite = event.getMap().getSprite(JarRenderer.EMPTY_TEXTURE);
-        }*/
     }
 
     @SubscribeEvent

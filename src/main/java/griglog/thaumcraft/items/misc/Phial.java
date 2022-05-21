@@ -1,6 +1,8 @@
 package griglog.thaumcraft.items.misc;
 
 import griglog.thaumcraft.api.aspect.IAspectContainer;
+import griglog.thaumcraft.api.aspect.IAspectHolder;
+import griglog.thaumcraft.api.aspect.IAspectHolderItem;
 import griglog.thaumcraft.aspect.*;
 import griglog.thaumcraft.items.ModItems;
 import griglog.thaumcraft.items.ModTab;
@@ -14,7 +16,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IWorldReader;
 
-public class Phial extends Item {
+public class Phial extends Item implements IAspectHolderItem {
     public Phial(boolean full) {
         super(ModTab.props());
         setRegistryName("phial_" + (full ? "full": "empty"));
@@ -89,6 +91,12 @@ public class Phial extends Item {
         ItemStack is = new ItemStack(ModItems.phialFull);
         setAspect(is, aspect);
         return is;
+    }
+
+    @Override
+    public AspectList readList(ItemStack is) {
+        return is.hasTag() ? new AspectList().add(getAspect(is), 10 * is.getCount())
+            : new AspectList().add(Aspects.VOID, 3 * is.getCount());
     }
 
     /*

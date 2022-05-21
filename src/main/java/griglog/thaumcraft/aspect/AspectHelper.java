@@ -39,12 +39,12 @@ public class AspectHelper {
     }
 
     public static AspectList keepMostValuable(AspectList list, int cap) {
-        AspectList copy = list.copy();
-        while (copy.size() > cap) {
+        //AspectList copy = list.copy();
+        while (list.size() > cap) {
             Aspect lowest = null;
             float low = Short.MAX_VALUE;
-            for (Aspect tag : copy.getAspects()) {
-                float amount = copy.getAmount(tag);
+            for (Aspect tag : list.getAspects()) {
+                float amount = list.getAmount(tag);
                 if (tag.isPrimal()) {
                     amount *= .9f;
                 } else {
@@ -72,9 +72,9 @@ public class AspectHelper {
                     lowest = tag;
                 }
             }
-            copy.aspects.remove(lowest);
+            list.remove(lowest);
         }
-        return copy;
+        return list;
     }
 
     public static Aspect getCombinationResult(Aspect aspect1, Aspect aspect2) {

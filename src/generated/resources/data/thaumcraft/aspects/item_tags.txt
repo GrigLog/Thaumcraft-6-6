@@ -1,0 +1,92 @@
+forge:ores 5 terra
+forge:dusts 1 perditio
+forge:ingots 10 metallum
+thaumcraft:clusters 5 ordo 5 terra
+forge:stone 5 terra
+forge:cobblestone 5 terra 1 perditio
+forge:crops 5 herba 5 victus
+forge:seeds 5 herba 1 victus
+forge:mushrooms 5 herba 2 tenebrae
+minecraft:wool 15 bestia 5 fabrico
+minecraft:tall_flowers 5 herba 1 aer 1 victus 5 sensus
+forge:sandstone 15 terra 15 perditio
+minecraft:stone_bricks 3 terra
+forge:slimeballs 5 aqua 5 victus 1 alkimia
+forge:feathers 5 volatus 5 aer
+forge:bones 5 mortuus 5 victus
+forge:eggs 5 victus 5 bestia
+forge:gunpowder 10 ignis 10 perditio 5 alkimia
+forge:heads 10 mortuus 10 spiritus
+forge:ores/lapis 15 sensus
+forge:ores/diamond 15 desiderium 15 vitreus
+forge:gems/diamond 15 vitreus 15 desiderium
+forge:ores/redstone 15 potentia
+forge:ores/emerald 10 desiderium 15 vitreus
+forge:gems/emerald 15 vitreus 10 desiderium
+forge:ores/quartz 10 vitreus
+forge:gems/quartz 5 vitreus
+forge:ores/iron 15 metallum
+forge:dusts/iron 15 metallum
+forge:ingots/iron 15 metallum
+forge:ores/gold 10 metallum 10 desiderium
+forge:dusts/gold 10 metallum 10 desiderium
+forge:ingots/gold 10 desiderium
+forge:ores/coal 15 potentia 15 ignis
+forge:dusts/redstone override 10 potentia
+forge:dusts/glowstone override 5 sensus 10 lux
+forge:ingots/copper 5 permutatio
+forge:dusts/copper 10 metallum 5 permutatio
+forge:ores/copper 10 metallum 5 permutatio
+thaumcraft:clusters/copper 15 metallum 10 permutatio
+forge:ingots/tin 5 vitreus
+forge:dusts/tin 10 metallum 5 vitreus
+forge:ores/tin 10 metallum 5 vitreus
+thaumcraft:clusters/tin 15 metallum 10 vitreus
+forge:ingots/silver 5 desiderium
+forge:dusts/silver 10 metallum 5 desiderium
+forge:ores/silver 10 metallum 5 desiderium
+thaumcraft:clusters/silver 15 metallum 10 desiderium
+forge:ingots/lead 5 ordo
+forge:dusts/lead 10 metallum 5 ordo
+forge:ores/lead 10 metallum 5 ordo
+thaumcraft:clusters/lead 15 metallum 10 ordo
+forge:ingots/brass 5 instrumentum
+forge:dusts/brass 10 metallum 5 instrumentum
+forge:ingots/bronze 5 instrumentum
+forge:dusts/bronze 10 metallum 5 instrumentum
+forge:ores/uranium 10 metallum 10 potentia
+forge:ingots/uranium 5 mortuus 10 potentia
+forge:gems/ruby 10 vitreus 10 desiderium
+forge:gems/sapphire 10 vitreus 10 desiderium
+forge:ingots/steel 15 metallum 5 ordo
+forge:nuggets/gold 1 metallum 1 desiderium
+forge:nuggets/iron 1 metallum
+forge:sand 5 terra 5 perditio
+forge:end_stones 5 terra 5 tenebrae
+forge:gravel 5 terra 2 perditio
+forge:glass 5 vitreus
+forge:ingots/brick 5 aqua 5 terra 1 ignis
+forge:netherrack 5 terra 2 ignis
+forge:ingots/nether_brick override 5 terra 3 ignis 1 ordo
+forge:obsidian 5 terra 5 ignis 5 tenebrae
+minecraft:logs 20 herba
+minecraft:saplings 15 herba 5 victus
+minecraft:leaves 5 herba
+forge:crops/carrot 5 sensus
+forge:crops/potato 5 terra
+forge:crops/beetroot 1 desiderium
+forge:crops/nether_wart override 1 herba 2 vitium 3 alkimia
+minecraft:fishes 5 bestia 5 victus 5 aqua
+forge:ender_pearls 10 alienis 15 motus
+minecraft:music_discs 15 sensus 10 desiderium 5 aer
+forge:nether_stars 10 alienis 20 praecantatio 20 ordo 10 auram
+forge:dusts/prismarine 5 aqua 5 terra
+forge:gems/prismarine 5 aqua 5 vitreus 5 lux
+minecraft:arrows 5 aversio 1 volatus
+minecraft:doors 5 vinculum 5 machina
+minecraft:boats 10 aqua 15 motus
+forge:fence_gates 5 vinculum 5 machina
+minecraft:trapdoors 5 vinculum 5 motus
+minecraft:buttons 5 machina
+forge:gear 5 machina
+minecraft:flowers 5 herba 1 victus 5 sensus

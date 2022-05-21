@@ -4,10 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.api.CrucibleRecipe;
 import griglog.thaumcraft.api.aspect.IAspectHolder;
-import griglog.thaumcraft.aspect.Aspect;
-import griglog.thaumcraft.aspect.AspectEntry;
-import griglog.thaumcraft.aspect.AspectList;
-import griglog.thaumcraft.aspect.Aspects;
+import griglog.thaumcraft.aspect.*;
 import griglog.thaumcraft.blocks.ModBlocks;
 import griglog.thaumcraft.client.SoundsTC;
 import griglog.thaumcraft.entity.CrucibleItem;
@@ -169,7 +166,7 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
     }
 
     public ItemStack attemptSmelt(ItemStack is, PlayerEntity player) {
-        AspectList ae = getAspects(is);
+        AspectList ae = ItemAspects.getAspects(is);
         CrucibleRecipe cr = checkRecipe(is, aspects);
         if (cr != null){
             ItemStack res = cr.getRecipeOutput();
@@ -212,10 +209,6 @@ public class CrucibleTile extends TileEntity implements ITickableTileEntity, IAs
         } while (items.getCount() > 0);
     }
 
-    public static AspectList getAspects(ItemStack is){
-        return new AspectList().add(new AspectEntry(Aspects.AIR, 10 * is.getCount()))
-                               .add(new AspectEntry(Aspects.EARTH, 5 * is.getCount()));
-    }
 
     public static CrucibleRecipe checkRecipe(ItemStack is, AspectList aspects){
         for (CrucibleRecipe cr : recipes){

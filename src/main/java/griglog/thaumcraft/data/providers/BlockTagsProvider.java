@@ -1,4 +1,4 @@
-package griglog.thaumcraft.data;
+package griglog.thaumcraft.data.providers;
 
 import griglog.thaumcraft.Thaumcraft;
 import griglog.thaumcraft.blocks.ModBlocks;

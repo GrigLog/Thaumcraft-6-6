@@ -1,4 +1,4 @@
-package griglog.thaumcraft.data;
+package griglog.thaumcraft.data.providers;
 
 import com.google.common.collect.ImmutableSet;
 import griglog.thaumcraft.Thaumcraft;

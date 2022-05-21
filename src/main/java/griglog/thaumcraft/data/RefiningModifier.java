@@ -34,14 +34,14 @@ import java.util.Map;
 public class RefiningModifier extends LootModifier {
     float baseChance, perLevel;
     List<Entry> drops;
-    protected RefiningModifier(float base, float perLevel, List<Entry> drops) {
+    public RefiningModifier(float base, float perLevel, List<Entry> drops) {
         super(new ILootCondition[0]);
         this.baseChance = base;
         this.perLevel = perLevel;
         this.drops = drops;
     }
 
-    static class Entry {
+    public static class Entry {
         Ingredient ing;
         ItemStack res;
         float chance;

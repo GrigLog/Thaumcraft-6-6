@@ -4,6 +4,10 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import griglog.thaumcraft.api.IGoggles;
 import griglog.thaumcraft.api.aspect.IAspectContainer;
 import griglog.thaumcraft.api.aspect.IAspectHolder;
+import griglog.thaumcraft.aspect.Aspect;
+import griglog.thaumcraft.aspect.AspectEntry;
+import griglog.thaumcraft.aspect.AspectList;
+import griglog.thaumcraft.aspect.ItemAspects;
 import griglog.thaumcraft.client.RenderHelper;
 import griglog.thaumcraft.items.infusions.InfusionEnchantment;
 import griglog.thaumcraft.api.IRechargable;
@@ -26,6 +30,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3f;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.LightType;
@@ -59,6 +64,12 @@ public class ClientEvents {
                 int c = Math.round((float) RechargeHelper.getCharge(event.getItemStack()));
                 if (c >= 0) {
                     event.getToolTip().add(new TranslationTextComponent("tc.charge").appendString( " " + c).mergeStyle(TextFormatting.YELLOW));
+                }
+            }
+            AspectList aspects = ItemAspects.getAspects(event.getItemStack());
+            if (aspects != AspectList.EMPTY){
+                for (Aspect a : aspects.getAspectsSortedByAmount()){
+                    event.getToolTip().add(new StringTextComponent(aspects.getAmount(a) + " " + a.tag));
                 }
             }
             /*

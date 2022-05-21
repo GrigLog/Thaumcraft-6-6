@@ -1,6 +1,8 @@
-package griglog.thaumcraft.data;
+package griglog.thaumcraft.data.providers;
 
 import griglog.thaumcraft.Thaumcraft;
+import griglog.thaumcraft.data.ModTags;
+import griglog.thaumcraft.data.RefiningModifier;
 import griglog.thaumcraft.items.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;

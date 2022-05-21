@@ -1,0 +1,179 @@
+minecraft:bedrock 25 vacuos 25 perditio 25 terra 25 tenebrae
+minecraft:grass_block 5 terra 1 herba
+minecraft:farmland 5 terra 2 aqua 2 ordo
+minecraft:grass 5 terra 2 herba
+minecraft:grass_path 5 terra 2 herba 2 ordo
+minecraft:mycelium 5 terra 1 herba 1 vitium
+minecraft:soul_sand 3 terra 1 vinculum 3 spiritus
+minecraft:mossy_cobblestone 3 herba
+minecraft:mossy_stone_bricks 1 herba
+minecraft:cracked_stone_bricks 1 perditio
+minecraft:chiseled_stone_bricks 1 ordo
+minecraft:smooth_sandstone 1 ordo
+minecraft:chiseled_sandstone 1 ordo
+minecraft:smooth_red_sandstone 1 ordo
+minecraft:chiseled_red_sandstone 1 ordo
+minecraft:clay_ball 5 aqua 5 terra
+minecraft:terracotta 15 aqua 15 terra 1 ignis
+minecraft:black_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:blue_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:brown_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:cyan_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:gray_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:green_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:light_blue_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:lime_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:magenta_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:orange_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:pink_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:purple_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:red_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:light_gray_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:white_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:yellow_glazed_terracotta 15 aqua 15 terra 2 ignis 2 sensus
+minecraft:tall_grass 5 herba 1 aer
+minecraft:fern 5 herba 1 aer
+minecraft:lily_pad 5 herba 1 aqua
+minecraft:dead_bush 5 herba 1 perditio
+minecraft:vine 5 herba
+minecraft:cactus 5 herba 5 aqua 1 aversio
+minecraft:brown_mushroom 2 terra
+minecraft:red_mushroom 2 ignis
+minecraft:brown_mushroom_block 5 herba 2 tenebrae 2 terra
+minecraft:red_mushroom_block 5 herba 2 tenebrae 2 ignis
+minecraft:sugar_cane 5 herba 3 aqua 2 aer
+minecraft:apple 5 herba 5 victus
+minecraft:baked_potato 5 herba 5 victus
+minecraft:poisonous_potato 5 herba 5 mortuus
+minecraft:pumpkin 10 herba
+minecraft:melon 10 herba
+minecraft:melon_slice 1 herba
+minecraft:sponge 5 terra 5 vinculum 5 vacuos
+minecraft:wet_sponge 5 terra 5 vinculum 5 aqua
+minecraft:sugar 5 herba 3 aqua 2 aer 1 desiderium 1 potentia
+minecraft:cake 15 herba 13 victus 3 aqua 2 desiderium 1 potentia 1 aer
+minecraft:pumpkin_pie 9 herba 1 desiderium 2 victus 1 aqua
+minecraft:experience_bottle 20 cognitio
+minecraft:name_tag 10 cognitio 10 bestia
+minecraft:iron_horse_armor 15 metallum 10 praemunio 5 bestia
+minecraft:golden_horse_armor 10 metallum 15 praemunio 5 bestia
+minecraft:diamond_horse_armor 15 vitreus 20 praemunio 5 bestia
+minecraft:magma_block 10 ignis 5 terra
+minecraft:chorus_flower 5 alienis 5 sensus 5 herba
+minecraft:chorus_plant 5 alienis 5 herba
+minecraft:chorus_fruit 5 alienis 5 sensus 5 herba
+minecraft:popped_chorus_fruit 5 alienis 5 sensus 4 herba 1 ignis
+minecraft:ice 20 gelum
+minecraft:packed_ice 15 gelum 5 ordo
+minecraft:snowball 1 gelum
+minecraft:cookie 1 desiderium 1 victus 1 herba
+minecraft:torch 5 lux
+minecraft:cobweb 5 vinculum 1 bestia
+minecraft:flint 5 terra 5 instrumentum
+minecraft:string 5 bestia 1 fabrico
+minecraft:leather 5 bestia 5 praemunio
+minecraft:rotten_flesh 5 humanus 5 victus 5 perditio
+minecraft:spider_eye 5 sensus 5 bestia 5 mortuus
+minecraft:chicken 5 bestia 5 victus 5 aer
+minecraft:cooked_chicken 1 fabrico 5 bestia 5 victus
+minecraft:porkchop 5 bestia 5 victus 5 terra
+minecraft:cooked_porkchop 1 fabrico 5 bestia 5 victus
+minecraft:beef 5 bestia 5 victus 5 terra
+minecraft:cooked_beef 1 fabrico 5 bestia 5 victus
+minecraft:mutton 5 bestia 5 victus 5 terra
+minecraft:cooked_mutton 1 fabrico 5 bestia 5 victus
+minecraft:rabbit 5 bestia 5 victus 5 terra
+minecraft:cooked_rabbit 1 fabrico 5 bestia 5 victus
+minecraft:rabbit_hide 5 bestia 2 praemunio
+minecraft:rabbit_foot 5 bestia 5 praemunio 10 motus 5 alkimia
+minecraft:blaze_rod 15 ignis 5 potentia
+minecraft:saddle 10 bestia 10 motus 5 ordo
+minecraft:ghast_tear 5 exanimis 10 spiritus 10 alkimia
+minecraft:skeleton_skull 10 exanimis
+minecraft:wither_skeleton_skull 10 exanimis
+minecraft:zombie_head 10 humanus
+minecraft:player_head 10 humanus
+minecraft:creeper_head 5 perditio 5 ignis
+minecraft:dragon_head 10 ignis 10 tenebrae
+minecraft:dragon_breath 10 tenebrae 10 perditio 10 ignis 10 alkimia
+minecraft:cauldron add 15 alkimia
+minecraft:fermented_spider_eye add 5 alkimia
+minecraft:blaze_powder add 5 alkimia
+minecraft:glistering_melon_slice add 5 alkimia
+minecraft:magma_cream add 5 alkimia
+minecraft:totem_of_undying 10 ordo 10 perditio 25 victus 10 exanimis
+minecraft:shulker_shell 10 praemunio 5 alienis 5 bestia 5 vacuos
+minecraft:music_disc_13 5 aqua
+minecraft:music_disc_cat 5 bestia
+minecraft:music_disc_chirp 5 terra
+minecraft:music_disc_far 5 alienis
+minecraft:music_disc_mall 5 humanus
+minecraft:music_disc_mellohi 5 fabrico
+minecraft:music_disc_stal 5 tenebrae
+minecraft:music_disc_strad 5 potentia
+minecraft:music_disc_ward 5 victus
+minecraft:music_disc_blocks 5 instrumentum
+minecraft:music_disc_wait 5 vinculum
+minecraft:chainmail_helmet 42 metallum
+minecraft:chainmail_chestplate 67 metallum
+minecraft:chainmail_leggings 58 metallum
+minecraft:chainmail_boots 33 metallum
+minecraft:paper add 2 cognitio
+minecraft:book 5 cognitio 3 herba
+minecraft:enchanted_book 5 cognitio 3 herba
+minecraft:bookshelf add 8 cognitio
+minecraft:dragon_egg 15 alienis 15 bestia 15 tenebrae 15 motus 5 praecantatio
+minecraft:end_portal_frame 10 alienis 10 potentia 10 motus 5 praecantatio
+minecraft:spawner 20 bestia 20 motus 20 exanimis 20 praecantatio
+minecraft:elytra 20 volatus 15 motus
+minecraft:end_rod 1 ignis 5 lux
+minecraft:chest add 15 vacuos
+minecraft:trapped_chest add 10 vinculum
+minecraft:ender_eye add 10 sensus 5 praecantatio
+minecraft:glass_bottle add 5 vacuos
+minecraft:golden_apple 60 metallum 60 desiderium 15 praecantatio 10 victus
+minecraft:enchanted_golden_apple 100 metallum 100 desiderium 30 praecantatio 15 victus 15 praemunio
+minecraft:bowl add 5 vacuos
+minecraft:mushroom_stew add 5 victus
+minecraft:minecart add 15 motus
+minecraft:fishing_rod add 10 aqua 5 instrumentum
+minecraft:shield add 20 praemunio
+minecraft:spectral_arrow add 10 sensus 5 praecantatio
+minecraft:bucket 33 metallum 5 vacuos
+minecraft:water_bucket 33 metallum 5 vacuos 20 aqua
+minecraft:lava_bucket 33 metallum 5 vacuos 15 ignis 5 terra
+minecraft:milk_bucket 33 metallum 5 vacuos 10 victus 5 bestia 5 aqua
+minecraft:brewing_stand add 15 fabrico 25 alkimia
+minecraft:stone_button add 5 machina
+minecraft:rail add 10 motus
+minecraft:detector_rail add 5 machina 1 sensus
+minecraft:powered_rail add 5 machina 1 potentia
+minecraft:activator_rail add 5 machina
+minecraft:lever add 5 machina
+minecraft:piston add 10 machina 10 motus
+minecraft:sticky_piston add 10 machina 10 motus
+minecraft:jukebox add 20 sensus 10 machina 15 aer
+minecraft:note_block add 20 sensus 10 machina 15 aer
+minecraft:furnace add 10 ignis
+minecraft:enchanting_table add 25 praecantatio 15 fabrico
+minecraft:crafting_table add 20 fabrico
+minecraft:clock add 10 machina
+minecraft:beacon add 10 auram 10 praecantatio 10 permutatio
+minecraft:carrot_on_a_stick add 5 motus 10 desiderium
+minecraft:flower_pot add 5 vacuos 5 herba
+minecraft:golden_carrot add 10 sensus 5 alkimia
+minecraft:ender_chest add 10 permutatio 10 motus 20 vacuos
+minecraft:comparator add 15 machina 5 ordo 5 sensus
+minecraft:repeater add 15 machina 10 potentia
+minecraft:hopper add 5 machina 10 permutatio 5 vacuos
+minecraft:dropper add 5 machina 10 permutatio 5 vacuos
+minecraft:dispenser add 5 machina 10 permutatio 5 vacuos
+minecraft:tripwire_hook add 5 sensus 5 machina 5 vinculum
+minecraft:daylight_detector add 10 sensus 10 lux 5 machina
+minecraft:ink_sac 2 aqua 2 bestia
+minecraft:lapis_lazuli 2 terra 2 desiderium
+minecraft:bone_meal 2 victus 1 mortuus 1 herba
+minecraft:coal 10 potentia 10 ignis
+minecraft:charcoal 10 potentia 10 ignis
+thaumcraft:phial_empty 3 vacuos
+thaumcraft:phial_full 

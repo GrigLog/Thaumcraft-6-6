@@ -2,6 +2,7 @@ package griglog.thaumcraft.events;
 
 import griglog.thaumcraft.aura.AuraHandler;
 import griglog.thaumcraft.aura.AuraWorld;
+import griglog.thaumcraft.data.CustomReloadListener;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,6 +17,7 @@ public class ServerEvents {
         for (ServerWorld sw : event.getServer().getWorlds()){
             AuraHandler.auras.put(sw, new AuraWorld(sw));
         }
+        Events.listener.tryFinish();
        // new Thread(AuraHandler::tick).start();
     }
 

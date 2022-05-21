@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.*;
 
 public class AspectList implements Serializable {
+    public static AspectList EMPTY = new AspectList();
     public ArrayList<AspectEntry> aspects = new ArrayList<>();
 
     public AspectList(CompoundNBT tag) {
@@ -21,6 +22,13 @@ public class AspectList implements Serializable {
         for (Aspect a : getAspects())
             out.add(a, getAmount(a));
         return out;
+    }
+
+    public AspectList multiply(float count){
+        for (AspectEntry ae : aspects){
+            ae.amount = (int) Math.ceil(ae.amount * count);
+        }
+        return this;
     }
 
     /**
@@ -63,7 +71,7 @@ public class AspectList implements Serializable {
      * @return an array of all the aspects in this collection sorted by amount
      */
     public Aspect[] getAspectsSortedByAmount() {
-        return aspects.stream().sorted(Comparator.comparingInt(a -> a.amount)).map(a -> a.type).toArray(Aspect[]::new);
+        return aspects.stream().sorted(Comparator.comparingInt(a -> -a.amount)).map(a -> a.type).toArray(Aspect[]::new);
     }
 
     /**
@@ -215,5 +223,17 @@ public class AspectList implements Serializable {
         for (AspectEntry ae : aspects){
             tlist.add(ae.getTag());
         }
+    }
+
+    @Override
+    public String toString() {
+        if (size() == 0)
+            return "";
+        StringBuilder sb = new StringBuilder();
+        for (AspectEntry ae : aspects){
+            sb.append(ae.amount).append(' ').append(ae.type.tag).append(' ');
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
     }
 }
