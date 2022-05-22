@@ -149,8 +149,6 @@ public class ItemAspectsProvider implements IDataProvider {
         put(Items.LILY_PAD, new AspectList().add(PLANT, 5).add(WATER, 1));
         put(Items.DEAD_BUSH, new AspectList().add(PLANT, 5).add(ENTROPY, 1));
         put(Items.VINE, new AspectList().add(PLANT, 5));
-
-
         put(Items.CACTUS, new AspectList().add(PLANT, 5).add(WATER, 5).add(AVERSION, 1));
         put(Items.BROWN_MUSHROOM, new AspectList().add(EARTH, 2));
         put(Items.RED_MUSHROOM, new AspectList().add(FIRE, 2));
@@ -168,7 +166,6 @@ public class ItemAspectsProvider implements IDataProvider {
         put(Items.SUGAR, new AspectList().add(PLANT, 5).add(WATER, 3).add(AIR, 2).add(DESIRE, 1).add(ENERGY, 1));
         put(Items.CAKE, new AspectList().add(PLANT, 15).add(LIFE, 13).add(WATER, 3).add(DESIRE, 2).add(ENERGY, 1).add(AIR, 1));
         put(Items.PUMPKIN_PIE, new AspectList().add(PLANT, 9).add(DESIRE, 1).add(LIFE, 2).add(WATER, 1));
-
         put(Items.EXPERIENCE_BOTTLE, new AspectList().add(MIND, 20));
         put(Items.NAME_TAG, new AspectList().add(MIND, 10).add(BEAST, 10));
         put(Items.IRON_HORSE_ARMOR, new AspectList().add(METAL, 15).add(PROTECT, 10).add(BEAST, 5));
@@ -183,7 +180,6 @@ public class ItemAspectsProvider implements IDataProvider {
         put(Items.PACKED_ICE, new AspectList().add(COLD, 15).add(ORDER, 5));
         put(Items.SNOWBALL, new AspectList().add(COLD, 1));
         put(Items.COOKIE, new AspectList().add(DESIRE, 1).add(LIFE, 1).add(PLANT, 1));
-
         put(Blocks.TORCH, new AspectList().add(LIGHT, 5));
         put(Items.COBWEB, new AspectList().add(TRAP, 5).add(BEAST, 1));
         put(Items.FLINT, new AspectList().add(EARTH, 5).add(TOOL, 5));
@@ -191,7 +187,6 @@ public class ItemAspectsProvider implements IDataProvider {
         put(Items.LEATHER, new AspectList().add(BEAST, 5).add(PROTECT, 5));
         put(Items.ROTTEN_FLESH, new AspectList().add(MAN, 5).add(LIFE, 5).add(ENTROPY, 5));
         put(Items.SPIDER_EYE, new AspectList().add(SENSES, 5).add(BEAST, 5).add(DEATH, 5));
-
         put(Items.CHICKEN, new AspectList().add(BEAST, 5).add(LIFE, 5).add(AIR, 5));
         put(Items.COOKED_CHICKEN, new AspectList().add(CRAFT, 1).add(BEAST, 5).add(LIFE, 5));
         put(Items.PORKCHOP, new AspectList().add(BEAST, 5).add(LIFE, 5).add(EARTH, 5));
@@ -207,7 +202,6 @@ public class ItemAspectsProvider implements IDataProvider {
         put(Items.BLAZE_ROD, new AspectList().add(FIRE, 15).add(ENERGY, 5));
         put(Items.SADDLE, new AspectList().add(BEAST, 10).add(MOTION, 10).add(ORDER, 5));
         put(Items.GHAST_TEAR, new AspectList().add(UNDEAD, 5).add(SOUL, 10).add(ALCHEMY, 10));
-
         put(Items.SKELETON_SKULL, new AspectList().add(UNDEAD, 10));
         put(Items.WITHER_SKELETON_SKULL, new AspectList().add(UNDEAD, 10));
         put(Items.ZOMBIE_HEAD, new AspectList().add(MAN, 10));
@@ -255,7 +249,6 @@ public class ItemAspectsProvider implements IDataProvider {
         add(Items.BOWL, new AspectList().add(VOID, 5));
         add(Items.MUSHROOM_STEW, new AspectList().add(LIFE, 5));
         add(Items.MINECART, new AspectList().add(MOTION, 15));
-
         add(Items.FISHING_ROD, new AspectList().add(WATER, 10).add(TOOL, 5));
         add(Items.SHIELD, new AspectList().add(PROTECT, 20));
         add(Items.SPECTRAL_ARROW, new AspectList().add(SENSES, 10).add(MAGIC, 5));
@@ -271,19 +264,16 @@ public class ItemAspectsProvider implements IDataProvider {
         add(Items.DETECTOR_RAIL, new AspectList().add(MECHANISM, 5).add(SENSES, 1));
         add(Items.POWERED_RAIL, new AspectList().add(MECHANISM, 5).add(ENERGY, 1));
         add(Items.ACTIVATOR_RAIL, new AspectList().add(MECHANISM, 5));
-
         add(Items.LEVER, new AspectList().add(MECHANISM, 5));
         add(Items.PISTON, new AspectList().add(MECHANISM, 10).add(MOTION, 10));
         add(Items.STICKY_PISTON, new AspectList().add(MECHANISM, 10).add(MOTION, 10));
         add(Items.JUKEBOX, new AspectList().add(SENSES, 20).add(MECHANISM, 10).add(AIR, 15));
         add(Items.NOTE_BLOCK, new AspectList().add(SENSES, 20).add(MECHANISM, 10).add(AIR, 15));
-
         add(Items.FURNACE, new AspectList().add(FIRE, 10));
         add(Items.ENCHANTING_TABLE, new AspectList().add(MAGIC, 25).add(CRAFT, 15));
         add(Items.CRAFTING_TABLE, new AspectList().add(CRAFT, 20));
         add(Items.CLOCK, new AspectList().add(MECHANISM, 10));
         add(Items.BEACON, new AspectList().add(AURA, 10).add(MAGIC, 10).add(EXCHANGE, 10));
-
         add(Items.CARROT_ON_A_STICK, new AspectList().add(MOTION, 5).add(DESIRE, 10));
         add(Items.FLOWER_POT, new AspectList().add(VOID, 5).add(PLANT, 5));
         add(Items.GOLDEN_CARROT, new AspectList().add(SENSES, 10).add(ALCHEMY, 5));
@@ -313,8 +303,6 @@ public class ItemAspectsProvider implements IDataProvider {
         put(Items.CHARCOAL, new AspectList().add(ENERGY, 10).add(FIRE, 10));
 
 
-        put(ModItems.phialEmpty, new AspectList().add(VOID, 3));
-        put(ModItems.phialFull, new AspectList());
         //add(BlocksTC.grassAmbient), new AspectList(Blocks.GRASS)).add(LIGHT, 5));
         /*
         addCrafted(BlocksTC.tableWood, new AspectList().add(TOOL, 1));

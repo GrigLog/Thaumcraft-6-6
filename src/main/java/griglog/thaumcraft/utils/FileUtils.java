@@ -36,7 +36,7 @@ public class FileUtils {
                 mode = Mode.ADD_TO_GENERATED;
             if (mode != Mode.DEFAULT)
                 arrStart = 2;
-            for (int i = arrStart; i < parts.length; i += 2){
+            for (int i = arrStart; i + 1 < parts.length; i += 2){
                 list.add(Aspects.get(parts[i+1]), Integer.parseInt(parts[i]));
             }
             res.add(new AspectHolderParsed(parts[0], mode, list));

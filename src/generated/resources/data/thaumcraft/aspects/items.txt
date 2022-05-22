@@ -175,5 +175,3 @@ minecraft:lapis_lazuli 2 terra 2 desiderium
 minecraft:bone_meal 2 victus 1 mortuus 1 herba
 minecraft:coal 10 potentia 10 ignis
 minecraft:charcoal 10 potentia 10 ignis
-thaumcraft:phial_empty 3 vacuos
-thaumcraft:phial_full 

@@ -18,7 +18,7 @@ public class AspectList implements Serializable {
 
     public AspectList(String s){
         String[] parts = s.split(" ");
-        for (int i = 0; i < parts.length; i += 2){
+        for (int i = 0; i + 1 < parts.length; i += 2){
             add(Aspects.get(parts[i+1]), Integer.parseInt(parts[i]));
         }
     }
